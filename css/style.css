@@ -1,0 +1,2032 @@
+/* VARIAVEIS #################################*/
+:root {
+    --cor-primaria: #D98C45;
+    --cor-secundaria: #5D4037;
+    --cor-secundaria-clara: #795548;
+    /* --cor-bg-body: #FDFBF7; */
+    /* --cor-bg-body: #ede0d4; */
+    /* --cor-bg-body: #EADBC8; */
+    /* --cor-bg-body: #F2E8DF; */
+    --cor-bg-body: #F5EBC3;
+    --cor-bg-body02: #F5E5A4;
+
+    --cor-texto: #3E2723;
+    --cor-texto-suave: #8D6E63;
+    --cor-neutra: #FFFFFF;
+    /*branco*/
+    /* --cor-destaque: #FFF8E1; creme */
+    /* --cor-destaque: #F5EBC3;*/
+    --cor-destaque: #E3C588;
+    --cor-botao-whatsapp: #25D366;
+    --cor-botao-menu-principal-ativo: rgba(0, 0, 0, 0.2);
+
+    --cor-linha-tabela: rgba(0, 0, 0, 0.1);
+    /* --cor-sombra-tabela: rgba(0, 0, 0, 0.05); */
+    --cor-sombra-tabela: rgba(0, 0, 0, 0.2);
+    --cor-sombra-mapa: rgba(0, 0, 0, 0.2);
+    --cor-escurecimento-texto-banner: rgba(0, 0, 0, 0.6);
+    --cor-sombra-hover-redes-sociais: rgba(217, 140, 69, 0.4);
+    --cor-sombra-botao-whatsapp: rgba(0, 0, 0, 0.3);
+    --cor-sombra-hover-whatsapp: rgba(0, 0, 0, 0.4);
+
+    --cor-bordas-campos-formulario: #e0e0e0;
+    --cor-fundo-campos-formularios: #fafafa;
+    --cor-sombra-campos-formularios: rgba(217, 140, 69, 0.2);
+    --cor-sombra-botoes-formularios: rgba(217, 140, 69, 0.3);
+
+    /* feedback */
+    --cor-sucesso: #2E7D32;
+    --cor-erro: #C62828;
+
+    /* fontes */
+    --fonte-titulo: "Fraunces", serif;
+    --fonte-corpo: "Mulish", sans-serif;
+}
+
+
+/* RESETAR #################################*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    /* Remove o sublinhado */
+    color: inherit;
+    /* Faz o link herdar a cor do texto ao redor */
+}
+
+/* CORREÇÃO DA ROLAGEM DO MENU INTERNO */
+html {
+    scroll-behavior: smooth;
+    /* a tela desliza suavemente em vez de pular */
+}
+
+/* Aplica a margem em todas as seções que têm ID (os alvos do menu) */
+@media (min-width: 769px) {
+
+    section[id],
+    .grupo-input input,
+    .grupo-input select,
+    .grupo-input textarea {
+        scroll-margin-top: 170px;
+    }
+}
+
+
+body {
+    background-color: var(--cor-bg-body);
+    font-family: var(--fonte-corpo);
+    color: var(--cor-texto);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+}
+
+
+/* CABEÇALHO */
+
+.cabecalho {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 10px 20px;
+    /* Ajuste o padding lateral conforme seu gosto */
+    gap: 30px;
+    /*empurra os botões pra longe do menu*/
+    width: 100%;
+    box-sizing: border-box;
+    /* Garante que o padding não estoure a largura */
+    background-color: var(--cor-secundaria);
+
+    box-shadow: 0 2px 5px var(--cor-sombra-tabela);
+    /* Cria uma sombrinha muito leve embaixo do menu para separá-lo do conteúdo.
+       0 (eixo x), 2px (eixo y - desce), 5px (borrão), cor preta com 5% de opacidade. */
+
+    position: sticky;
+    /*"gruda" quando rola a tela.*/
+    top: 0;
+    /* Ponto de fixação: gruda exatamente no topo (0px de distância do teto). */
+    z-index: 1000;
+    /* Camada: Garante que o menu flutue POR CIMA de qualquer outro elemento (fotos, textos). */
+}
+
+/* Forçar o container do menu para a esquerda */
+.menu-interno {
+    justify-self: start;
+    /* Encosta o bloco do menu na esquerda (logo) */
+    margin-left: 20px;
+    /* Um pequeno respiro para não grudar na logo */
+}
+
+/* Tirar a centralização da lista APENAS do menu interno */
+.menu-interno ul {
+    margin: 0;
+    /* Remove o '0 auto' que centralizava */
+    justify-content: flex-start;
+    /* Garante que os itens comecem da esquerda */
+}
+
+/* LOGO */
+
+.logo-link img {
+    height: 100px;
+    width: auto;
+    /* largura automática para não "espremer" ou distorcer a logo */
+    display: block;
+    /* Remove um espaçamento branco misterioso que navegadores colocam embaixo de imagens. */
+    transition: transform 0.3s ease;
+}
+
+/* HOVER da LOGO */
+.logo-link:hover img {
+    transform: scale(1.05);
+    /* hover: logo cresce apenas 5%. */
+}
+
+.logo-link {
+    justify-self: start;
+    /* Garante que a Logo fique colada na esquerda */
+}
+
+
+/* Lista de Links Menu Interno */
+
+nav ul {
+    display: flex;
+    /* Transforma a lista (que é vertical por padrão) em horizontal. */
+    list-style: none;
+    /* Remove as bolinhas que vêm na tag <ul>. */
+    gap: 15px;
+    /* Adiciona 15px de espaço vazio entre cada item do menu. 
+       Muito melhor que usar margin-right. */
+    align-items: center;
+    /* Centraliza os textos verticalmente dentro da linha do menu. */
+    padding: 0;
+    margin: 0 auto;
+    /*ajuda a centralizar o menu no espaço disponivel*/
+}
+
+/* Estilização dos Links Menu Interno  */
+
+.menu-interno a {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--cor-primaria);
+    font-family: var(--fonte-titulo);
+    position: relative;
+}
+
+/* Hover Menu Interno */
+
+.menu-interno a:hover {
+    color: var(--cor-texto-suave);
+}
+
+/* Estilização dos Links Menu Principal */
+
+
+.menu-principal {
+    justify-self: end;
+    /* Garante que os Botões fiquem colados na direita */
+}
+
+.botao-menu-principal {
+    background-color: var(--cor-primaria);
+    font-family: var(--fonte-corpo);
+    color: var(--cor-neutra);
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+/* Efeito hover dos botoes do menu principal */
+
+.botao-menu-principal:hover {
+    background-color: var(--cor-texto-suave);
+}
+
+/* Botão da página atual fica com cor diferente ou borda */
+.botao-menu-principal.ativo {
+    background-color: var(--cor-secundaria);
+    box-shadow: inset 0 2px 5px var(--cor-botao-menu-principal-ativo);
+    /* Sombra interna para parecer "pressionado" */
+    pointer-events: none;
+    /* (Opcional) Impede de clicar na página que já está */
+}
+
+/* BANNER INICIAL: TITULO E SLOGAN*/
+
+.banner-inicial {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--cor-destaque);
+    margin-bottom: 0;
+    /* Empurra o conteúdo seguinte para baixo, para não ficar grudado. */
+}
+
+/* título */
+.banner-inicial h1 {
+    font-size: 3rem;
+    color: var(--cor-secundaria);
+}
+
+/* subtitulo/slogan */
+.banner-inicial p {
+    font-size: 1.2rem;
+    color: var(--cor-texto-suave);
+}
+
+/* VITRINE DE PRODUTOS - MODELO CARDS 4X3 */
+
+#galeria-produtos {
+    padding: 60px 20px;
+    /* Mais espaço vertical para elegância */
+    background-color: var(--cor-neutra);
+    text-align: center;
+}
+
+#galeria-produtos h2 {
+    color: var(--cor-secundaria);
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+/* COMBINAÇÃO DAS REGRAS DO GRID */
+.galeria-grid {
+    display: grid;
+    /* - repeat(auto-fit...): Cria quantas colunas couberem na tela.
+       - minmax(300px, 1fr): Cada foto terá no MÍNIMO 300px. 
+       Se sobrar espaço, ela estica (1fr) para preencher até a borda. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0px 20px;
+    max-width: 1200px;
+    /* limite máximo para esticar a imagem */
+    margin: 20px auto;
+    /* 20px em cima/baixo e AUTO nas laterais (isso centraliza o bloco) */
+}
+
+/* O CARD DA IMAGEM */
+.galeria-grid img {
+    width: 100%;
+    height: auto;
+
+    /* A MÁGICA: Aspect Ratio (Substitui o height fixo) 1/1 faz um quadrado perfeito. */
+    aspect-ratio: 1 / 1;
+
+    /* Força todas a serem quadradas */
+    object-fit: cover;
+    /* cover = Cobre a área inteira cortando as bordas se necessário */
+
+    border-radius: 15px;
+    /* Borda branca grossa estilo foto */
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* HOVER MAIS ATRATIVO */
+.galeria-grid img:hover {
+    transform: scale(1.05) rotate(2deg);
+    /* Um leve giro para dar charme */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    /* Garante que fique por cima se sobrepor */
+}
+
+/* CARDS PROMOÇOES */
+
+/* Visual do cartão de promoção (individual) */
+
+/* 1. A CAIXA (Deixa os itens lado a lado)*/
+.cards-promocoes {
+    display: flex;
+    flex-direction: row;
+    /* Força a ficar na horizontal */
+    flex-wrap: wrap;
+    /* Joga para baixo no celular */
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 2. O CARTÃO (Visual branco, bordas e alinhamento interno) */
+.card-promocao {
+    background-color: var(--cor-neutra);
+    width: 300px;
+    border-radius: 20px;
+    padding: 25px 20px;
+    box-shadow: 0 8px 25px rgba(93, 64, 55, 0.08);
+    border: 1px solid rgba(217, 140, 69, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    /* O texto e foto empilham DENTRO do cartão */
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito luminoso e elevação no Hover */
+.card-promocao:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(93, 64, 55, 0.15);
+}
+
+/* IMAGEM dentro do card promoção - Efeito 3D */
+.card-promocao img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    margin: 10px 0 20px 0;
+    /* A Mágica: Cria uma sombra acompanhando o contorno do PNG da comida! */
+    filter: drop-shadow(0 15px 10px rgba(0, 0, 0, 0.15));
+    transition: transform 0.4s ease;
+}
+
+/* Comida dá um leve zoom quando o mouse passa no card */
+.card-promocao:hover img {
+    transform: scale(1.1) rotate(-2deg);
+}
+
+/* TÍTULO DA SEÇÃO DE PROMOÇÕES */
+#promocoes-cardapio h2 {
+    text-align: center;
+    /* Centraliza o texto */
+    color: var(--cor-secundaria);
+    font-size: 2.2rem;
+    /* Aumenta o tamanho para dar destaque */
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-family: var(--fonte-titulo);
+}
+
+/* TITULO do PRODUTO */
+.card-promocao h3 {
+    font-size: 1.4rem;
+    color: var(--cor-secundaria);
+    /* Escureci para dar mais contraste */
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+/* DESCRICAO do PRODUTO */
+.card-promocao p {
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+    margin-bottom: 20px;
+    line-height: 1.4;
+    flex-grow: 1;
+    /* ISSO É VITAL: Empurra o preço e os botões sempre para o fundo, alinhando todos os cards! */
+}
+
+/* PREÇO do PRODUTO - Mais vibrante */
+.preco-destaque {
+    background-color: var(--cor-sucesso);
+    color: var(--cor-neutra);
+    font-weight: 800;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+    /* Brilho verde */
+    margin-bottom: 20px;
+}
+
+/* O NOVO BOTÃO UNIFICADO (Quantidade + Adicionar) */
+.controles-pedido {
+    display: flex;
+    width: 100%;
+    height: 45px;
+    border-radius: 50px;
+    /* Formato de Pílula */
+    overflow: hidden;
+    /* Corta as pontas quadradas dos itens dentro */
+    border: 2px solid var(--cor-primaria);
+    box-shadow: 0 4px 10px rgba(217, 140, 69, 0.15);
+}
+
+.input-qtd {
+    width: 35%;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--cor-secundaria);
+    background-color: var(--cor-neutra);
+    outline: none;
+}
+
+.btn-adicionar {
+    width: 65%;
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    /* Espaço entre o ícone e o texto */
+}
+
+.btn-adicionar:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* TAG DE "MAIS VENDIDO" (Etiqueta Flutuante)*/
+.tag-mais-vendido {
+    position: absolute;
+    top: 60px; /* Descemos para ficar sobre a imagem */
+    right: -5px;
+    background-color: var(--cor-erro);
+    color: var(--cor-neutra);
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 20px 0 0 20px;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
+
+/* >>>>>>>>>> TABELAS - ESTILIZAÇÃO GERAL <<<<<<< */
+
+table {
+    width: 100%;
+    max-width: 1000px;
+    /* Não deixa ficar gigante em telas largas */
+    margin: 20px auto;
+    /* Centraliza a tabela */
+    border-collapse: collapse;
+    /* Junta as bordas duplas numa só */
+    background-color: var(--cor-neutra);
+    box-shadow: 0 5px 15px var(--cor-sombra-tabela);
+    border-radius: 10px;
+    overflow: hidden;
+    /* Garante que os cantos arredondados funcionem */
+}
+
+/* TITULO do CARDAPIO */
+#tabela-cardapio h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 2.2rem;
+    letter-spacing: 4px;
+    color: var(--secundaria);
+    text-align: center;
+    margin-top: 50px;
+    font-weight: 800;
+}
+
+/* --- ESTILIZAÇÃO DO CABEÇALHO DA TABELA --- */
+.cabecalho-tabela-cardapio th {
+    background-color: var(--cor-secundaria);
+    /* Fundo marrom para contraste */
+    color: var(--cor-neutra);
+    padding: 18px 15px;
+    text-align: left;
+    /* Alinhamento padrão à esquerda */
+    font-family: var(--fonte-titulo);
+    font-size: 1.1rem;
+}
+
+/* Alinha o último cabeçalho (Preço) à direita para facilitar leitura numérica */
+.cabecalho-tabela-cardapio th:last-child {
+    text-align: right;
+    padding-right: 25px;
+}
+
+/* --- CORPO DA TABELA CARDAPIO --- */
+.corpo-tabela-cardapio td {
+    padding: 15px;
+    border-bottom: 1px solid var(--cor-bg-body02);
+    color: var(--cor-texto);
+    font-size: 0.95rem;
+}
+
+/* Efeito ZEBRADO no CORPO da TABELA */
+.corpo-tabela-cardapio tr:nth-child(even) {
+    background-color: var(--cor-bg-body);
+}
+
+/* HOVER nas LINHAS (Aplica apenas em produtos, ignora categorias) */
+.corpo-tabela-cardapio tr:not(.linha-categoria):hover {
+    background-color: var(--cor-destaque);
+    transition: background-color 0.2s;
+}
+
+/* --- AJUSTES PARA A ÚLTIMA COLUNA (PREÇO) --- */
+.corpo-tabela-cardapio td:last-child {
+    font-weight: 700;
+    color: var(--cor-primaria);
+    text-align: right;
+    padding-right: 25px;
+}
+
+/* HOVER específico para destacar o valor do produto */
+.corpo-tabela-cardapio tr:hover td:last-child {
+    color: var(--cor-secundaria);
+    transform: scale(1.1);
+    /* Aumenta o preço em 10% */
+    transition: all 0.2s ease;
+}
+
+/* --- ESTILO DAS DIVISÓRIAS DE CATEGORIA --- */
+.linha-categoria td {
+    text-align: center !important;
+    /* Centraliza o título da categoria */
+    letter-spacing: 5px;
+    /* Espaçamento entre letras para ar sofisticado */
+    font-weight: 800;
+    text-transform: uppercase;
+    /* Gradiente para profundidade visual */
+    background: linear-gradient(to right, var(--cor-secundaria), var(--cor-secundaria-clara), var(--cor-secundaria)) !important;
+    color: var(--cor-destaque) !important;
+    border: none !important;
+}
+
+/* Remove interação de hover nas linhas de categoria */
+.corpo-tabela-cardapio tr.linha-categoria:hover {
+    background-color: var(--cor-secundaria) !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* --- CONTROLE DE LARGURA E HIERARQUIA DAS COLUNAS (HIERARQUIA) --- */
+
+/* Coluna 1 (Produto): 25% */
+.corpo-tabela-cardapio td:nth-child(1),
+.cabecalho-tabela-cardapio th:nth-child(1) {
+    width: 25%;
+    font-weight: 700;
+}
+
+/* Coluna 2 (Descrição): 60% (Acomoda melhor os textos longos) */
+.corpo-tabela-cardapio td:nth-child(2),
+.cabecalho-tabela-cardapio th:nth-child(2) {
+    width: 60%;
+    line-height: 1.4;
+}
+
+/* Coluna 3 (Preço): 15% */
+.corpo-tabela-cardapio td:nth-child(3),
+.cabecalho-tabela-cardapio th:nth-child(3) {
+    width: 15%;
+}
+
+
+
+/* >>>>> FOOTER <<<<<<<< */
+
+footer {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-destaque);
+    padding: 60px 20px 20px 20px;
+    /* margin-top: 60px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* gap: 40px; */
+}
+
+/* Container para colocar Horários e Mapa do FOOTER lado a lado */
+
+.tabela-horario-localizacao {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    /* Reduzi para aproximar os ícones */
+    max-width: 1200px;
+    width: 100%;
+    align-items: flex-start;
+    margin: 0 auto;
+}
+
+
+/* Garante que tanto a div da tabela quanto a do mapa ocupem o mesmo espaço */
+.tabela-horario-localizacao>section {
+    flex: 1;
+    /* Distribui o espaço igualmente (50% para cada) */
+    min-width: 300px;
+    /* Impede que fiquem espremidos no mobile */
+    display: flex;
+    flex-direction: column;
+}
+
+.tabela-horario-localizacao iframe,
+.tabela-horario-localizacao table {
+    width: 100%;
+    height: 200px;
+    /* Força o mapa a esticar para a altura da tabela */
+    margin: 0;
+}
+
+
+footer section {
+    flex: 1;
+    min-width: 300px;
+    /* Garante que não fiquem muito apertados */
+}
+
+/* TITULO do FOOTER */
+
+footer h2 {
+    color: var(--cor-primaria);
+    text-align: left;
+    margin-bottom: 20px;
+    font-style: normal;
+}
+
+/* TABELA DE HORÁRIOS (RODAPE) */
+
+.tabela-horario {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 12px;
+    border-collapse: collapse;
+    /* Importante para não sobrar espaços */
+    flex-grow: 0;
+}
+
+/* CABECALHO da TABELA HORARIOS no FOOTER */
+
+.cabecalho-tabela-horario th {
+    background-color: var(--cor-primaria);
+    color: var(--cor-neutra);
+    padding: 15px 12px;
+    text-align: left;
+    /* Alinha o texto à esquerda */
+    font-family: var(--fonte-titulo);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    /* Espaça um pouco as letras para elegância */
+}
+
+/* Centralizar apenas os títulos das colunas de horário (2ª e 3ª colunas) */
+.cabecalho-tabela-horario th:nth-child(2),
+.cabecalho-tabela-horario th:nth-child(3) {
+    text-align: center;
+}
+
+/* CORPO da TABELA DE HORARIOS no FOOTER */
+
+.corpo-tabela-horario td {
+    padding: 15px 12px;
+    /* border-bottom: 1px solid var(--cor-bg-body); */
+    color: var(--cor-texto);
+    font-size: 0.95rem;
+}
+
+/* Destacar apenas 1 coluna (exceto cabeçalho): */
+td.celulas-horario-destaque {
+    color: var(--cor-primaria);
+    font-weight: 800;
+}
+
+/* Centralizar conteudo APENAS das colunas 2 e 3. Coluna 1 manter centralizado */
+.celulas-horario-centralizado {
+    text-align: center;
+}
+
+
+/* Efeito ZEBRADO no CORPO da TABELA HORARIO */
+
+.corpo-tabela-horario tr:nth-child(even) {
+    /* Isso cria o efeito listrado sem você precisar colocar classes no HTML manualmente linha por linha. */
+    background-color: var(--cor-bg-body);
+}
+
+/* HOVER nas LINHAS da TABELA HORARIO */
+
+.corpo-tabela-horario tr:hover {
+    background-color: var(--cor-destaque);
+    transition: background-color 0.2s;
+}
+
+/* Quando passar o mouse na linha, muda a cor do dia para a cor secundária (marrom escuro) */
+.corpo-tabela-horario tr:hover td.celulas-horario-destaque {
+    color: var(--cor-secundaria);
+    transition: color 0.3s ease;
+}
+
+/* ETILIZAÇÃO DO MAPA */
+
+.endereco {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.endereco address {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* Força o address a ocupar toda a altura da section */
+    height: auto;
+}
+
+.endereco iframe {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px var(--cor-sombra-mapa);
+    filter: grayscale(0.2) contrast(1.1);
+    /* Um toque de estilo no mapa */
+    transition: 0.3s;
+    flex-grow: 1;
+    /* Faz o mapa crescer para ocupar toda a altura disponível */
+    min-height: 200px;
+    /* Altura mínima de segurança */
+}
+
+/* HOVER do MAPA */
+
+.endereco iframe:hover {
+    filter: grayscale(0.1);
+    /* O mapa ganha cor total no hover */
+}
+
+/* REDES SOCIAIS (FOOTER) */
+
+/* Container dos icones (para ficarem lado a lado) */
+
+.icones-redes-sociais {
+    display: flex;
+    flex-direction: row;
+    /* Garante que fiquem lado a lado */
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    padding-left: 0;
+    /* Garante que não haja recuo interno */
+}
+
+/* HOVER dos icones Redes Sociais */
+
+.icones-redes-sociais a {
+    transition: all 0.3s ease-in-out;
+}
+
+.icones-redes-sociais a:hover {
+    transform: translateY(-5px);
+}
+
+/* Tamanho do Ícone SVG das Redes Sociais */
+.icones-redes-sociais svg {
+    width: 40px;
+    height: 40px;
+    stroke: var(--cor-destaque);
+    /* stroke: é a linha de contorno do desenho */
+}
+
+/* RODAPÉ FINAL: CREDITOS */
+
+.creditos-footer {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--cor-linha-tabela);
+
+    /* Flexbox para alinhar o texto dos créditos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Edição Texto dos créditos */
+
+.creditos-footer p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+    color: var(--cor-texto-suave);
+}
+
+/* RESPONSIVIDADE do FOOTER */
+
+@media (max-width: 768px) {
+    .tabela-horario-localizacao>section {
+        width: 100%;
+        flex: none;
+        /* Desativa o flex:1 no mobile para empilhar direito */
+    }
+
+    /* Alinhamento exclusivo para o Social no mobile da Home */
+    footer .redes-sociais {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+        padding-left: 0;
+        /* align-items: flex-start; */
+        /* Alinha o conteúdo da div à esquerda */
+        /* text-align: left;
+        width: 100%;
+        padding-left: 0; */
+        /* Ajuste conforme o recuo que você deseja */
+    }
+
+    footer .redes-sociais h2 {
+        text-align: left;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* Garante que o container flex dos ícones também comece na esquerda */
+    footer .icones-redes-sociais {
+        justify-content: flex-start;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* BANNER VIDEO */
+
+.banner-video {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    /* Altura de 60% da tela para um visual moderno */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner-video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    /* Garante que o vídeo preencha o espaço sem distorcer */
+}
+
+/* Camada de escurecimento para dar contraste ao texto */
+
+.video-descricao {
+    background: var(--cor-escurecimento-texto-banner);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.video-descricao h2 {
+    color: var(--cor-destaque);
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.video-descricao p {
+    color: var(--cor-bg-body);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   NOVA SEÇÃO: SOBRE (TRADIÇÃO & HISTÓRIA)
+   ========================================= */
+
+.sobre-tradicao {
+    background-color: var(--cor-bg-body);
+    /* Mantém o fundo creme do site */
+    padding: 80px 20px 60px;
+    /* Espaçamento interno generoso */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* CONTAINER PRINCIPAL (Divide Texto e Foto) */
+.sobre-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Divide a tela em 2 colunas iguais */
+    gap: 50px;
+    max-width: 1200px;
+    align-items: center;
+    /* Centraliza verticalmente */
+    margin-bottom: 60px;
+}
+
+/* --- ESTILO DO TEXTO --- */
+.sobre-texto {
+    text-align: left;
+    padding: 20px;
+}
+
+.subtitulo-destaque {
+    color: var(--cor-primaria);
+    font-family: var(--fonte-corpo);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sobre-texto h2 {
+    font-size: 3rem;
+    line-height: 1.1;
+    color: var(--cor-secundaria);
+    margin-bottom: 25px;
+}
+
+.sobre-texto p {
+    font-size: 1.1rem;
+    color: var(--cor-texto);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* SELO DE QUALIDADE */
+.selo-qualidade {
+    display: inline-block;
+    border: 2px solid var(--cor-primaria);
+    padding: 10px 25px;
+    border-radius: 50px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.selo-qualidade:hover {
+    background-color: var(--cor-primaria);
+}
+
+.selo-qualidade p {
+    margin: 0;
+    /* Remove a margem padrão do <p> */
+    color: var(--cor-primaria);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.selo-qualidade:hover p {
+    color: var(--cor-neutra);
+    /* Texto fica branco no hover */
+}
+
+/* --- ESTILO DA IMAGEM --- */
+.sobre-midia {
+    position: relative;
+}
+
+.sobre-midia img {
+    width: 100%;
+    border-radius: 20px;
+    /* Sombra sólida deslocada (estilo retrô moderno) */
+    box-shadow: 20px 20px 0px var(--cor-destaque);
+    transition: transform 0.3s ease;
+}
+
+.sobre-midia img:hover {
+    transform: translateY(-5px);
+    /* Leve flutuação ao passar o mouse */
+}
+
+/* --- FAIXA DE ESTATÍSTICAS --- */
+.faixa-numeros {
+    width: 100%;
+    max-width: 1000px;
+    background-color: var(--cor-secundaria);
+    /* Fundo Marrom */
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    /* Espalha os itens */
+    padding: 40px 20px;
+    color: var(--cor-neutra);
+    box-shadow: 0 10px 30px rgba(93, 64, 55, 0.3);
+    margin-top: 20px;
+}
+
+.item-numero {
+    text-align: center;
+}
+
+.item-numero h3 {
+    font-size: 2.5rem;
+    color: var(--cor-destaque);
+    /* Dourado/Creme */
+    margin-bottom: 5px;
+}
+
+.item-numero p {
+    font-family: var(--fonte-corpo);
+    font-size: 1rem;
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+/* --- RESPONSIVIDADE DA SEÇÃO SOBRE --- */
+@media (max-width: 900px) {
+    .sobre-container {
+        grid-template-columns: 1fr;
+        /* Vira uma coluna única no mobile */
+        text-align: center;
+    }
+
+    .sobre-texto {
+        text-align: center;
+        order: 1;
+        /* Texto vem primeiro */
+    }
+
+    .sobre-texto h2 {
+        font-size: 2.5rem;
+        /* Título um pouco menor no mobile */
+    }
+
+    .sobre-midia {
+        order: 2;
+        /* Imagem vem depois */
+        margin: 0 20px;
+    }
+
+    .sobre-midia img {
+        box-shadow: 10px 10px 0px var(--cor-destaque);
+        /* Sombra menor */
+    }
+
+    .faixa-numeros {
+        flex-direction: column;
+        /* Empilha os números */
+        gap: 30px;
+        width: 90%;
+    }
+}
+
+
+/* Botão Flutuante do WhatsApp */
+.btn-whatsapp {
+    position: fixed;
+    bottom: 40px;
+    right: 35px;
+    /* quanto maior, mais para a ESQUERDA */
+    width: 60px;
+    height: 60px;
+    background-color: var(--cor-botao-whatsapp);
+
+
+    color: var(--cor-texto);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px var(--cor-sombra-botao-whatsapp);
+    z-index: 2000;
+    /* Garante que fique acima de tudo, até do menu */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Tamanho do Ícone */
+.btn-whatsapp svg {
+    width: 35px;
+    height: 35px;
+    fill: currentColor;
+    /* Pega a cor do texto definida no pai */
+    border-radius: 50%;
+}
+
+/* Efeito Hover (Animação de "pulo") */
+.btn-whatsapp:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 15px var(--cor-sombra-hover-whatsapp);
+}
+
+/* Tooltip (Texto que aparece ao lado do botão whats)*/
+.tooltip-whatsapp {
+    position: absolute;
+    right: 70px;
+    /* Joga para a esquerda do botão */
+    background-color: var(--cor-neutra);
+    color: var(--cor-texto);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    white-space: nowrap;
+    opacity: 0;
+    /* Invisível por padrão */
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(10px);
+    box-shadow: 0 2px 5px var(--cor-sombra-tabela);
+}
+
+.btn-whatsapp:hover .tooltip-whatsapp {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* Controles nos Cards */
+
+/* O NOVO BOTÃO UNIFICADO (Quantidade + Adicionar) */
+/* CONTAINER PÍLULA */
+.controles-pedido {
+    display: flex;
+    width: 100%;
+    height: 48px;
+    border-radius: 50px;
+    border: 2px solid var(--cor-primaria);
+    /* Contorno laranja principal */
+    overflow: hidden;
+    /* Corta o que estiver fora do arredondado */
+    background-color: var(--cor-neutra);
+    /* Fundo branco para a parte do input */
+    margin-top: auto;
+    padding: 0;
+    /* Garante que não haja recuo interno */
+}
+
+/* CAMPO DE QUANTIDADE */
+.input-qtd {
+    width: 60px;
+    /* Largura fixa para o número */
+    border: none;
+    border-right: 2px solid var(--cor-primaria);
+    /* Linha divisória interna */
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    outline: none;
+    background: transparent;
+}
+
+/* BOTÃO ADICIONAR */
+.btn-adicionar {
+    flex: 1;
+    /* A MÁGICA: Ocupa 100% do espaço que sobrou, sem frestas */
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-adicionar:hover {
+    background-color: var(--cor-secundaria);
+}
+
+.btn-adicionar:hover {
+    background-color: var(--cor-secundaria);
+}
+
+.btn-adicionar:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* O Carrinho Lateral */
+#carrinho-lateral {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100vh;
+    background-color: var(--cor-neutra);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 3000;
+    transition: transform 0.4s ease-in-out;
+}
+
+.carrinho-oculto {
+    transform: translateX(100%);
+    /* Esconde fora da tela à direita */
+}
+
+.carrinho-header {
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-fechar-carrinho {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.carrinho-body {
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.item-carrinho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--cor-bg-body02);
+}
+
+.btn-remover {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.carrinho-footer {
+    padding: 20px;
+    border-top: 2px solid var(--cor-bg-body02);
+}
+
+.total-pedido {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-finalizar-whats {
+    width: 100%;
+    background-color: #25D366;
+    /* Verde do WhatsApp */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-finalizar-whats:hover {
+    background-color: #1ebe57;
+}
+
+/* OPÇÕES DE ENTREGA (RADIO BUTTONS)*/
+
+.opcoes-entrega {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    font-family: var(--fonte-corpo);
+    font-weight: 700;
+    color: var(--cor-secundaria);
+    border-bottom: 1px dashed var(--cor-bg-body02);
+}
+
+.opcoes-entrega label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* CAMPOS DE CHECKOUT DO CARRINHO */
+
+.dados-cliente {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--cor-bg-body02);
+}
+
+.input-checkout {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--cor-bordas-campos-formulario);
+    border-radius: 8px;
+    font-family: var(--fonte-corpo);
+    font-size: 0.95rem;
+    background-color: var(--cor-fundo-campos-formularios);
+}
+
+.input-checkout:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 2px var(--cor-sombra-campos-formularios);
+}
+
+/* Classe para esconder elementos condicionalmente */
+.oculto {
+    display: none !important;
+}
+
+.select-checkout {
+    cursor: pointer;
+    color: var(--cor-texto-suave);
+}
+
+/*
+#########################################################################################################
+ESTILOS GERAIS PARA TODAS AS PAGINAS DE FORMULARIOS 
+(Contato, Pedidos, Feedback, Cadastro)
+#########################################################################################################
+*/
+
+/* ESTILO BASE DOS FORMULARIOS (UNIFICADO) */
+.formulario-contato,
+.formulario-pedidos,
+.formulario-feedback,
+.formulario-cadastro {
+    background-color: var(--cor-neutra);
+    max-width: 600px;
+    margin: 40px auto 60px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px var(--cor-sombra-tabela);
+}
+
+/* TITULO PRINCIPAL DAS PAGINAS (UNIFICADO) */
+.h1-contato,
+.h1-pedidos,
+.h1-feedback,
+.h1-cadastro {
+    text-align: center;
+    color: var(--cor-secundaria);
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    font-family: var(--fonte-titulo);
+}
+
+/* SUBTITULOS DAS PAGINAS (UNIFICADO) */
+.h2-contato,
+.h2-pedidos,
+.h2-feedback,
+.h2-cadastro {
+    text-align: center;
+    color: var(--cor-primaria);
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-family: var(--fonte-titulo);
+}
+
+/* COR DO BODY DAS PAGINAS (UNIFICADO) */
+.body-contato,
+.body-pedidos,
+.body-feedback,
+.body-cadastro {
+    background-color: var(--cor-bg-body);
+}
+
+/* SUBTITULOS DENTRO DO FORMULARIO */
+.formulario-pedidos h2,
+.formulario-feedback h2,
+.formulario-cadastro h2 {
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--cor-bg-body02);
+    /* linha separadora dos subtitulos */
+}
+
+/* AJUSTE DAS LABELS GERAIS */
+.grupo-input label,
+.formulario-pedidos label,
+.formulario-feedback label,
+.formulario-cadastro label {
+    font-size: 1.1rem;
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    color: var(--cor-secundaria);
+    margin-bottom: 8px;
+}
+
+/* TEXTO DE INSTRUÇÃO NOS FORMULARIOS */
+.formulario-pedidos p,
+.formulario-feedback p,
+.formulario-cadastro p {
+    font-weight: 700;
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-titulo);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* quando o grupo-input tiver apenas texto (p), removemos a margem grande de baixo */
+.grupo-input:has(p) {
+    margin-bottom: 5px;
+}
+
+/* RESET DOS INPUTS */
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+    /* Herda a fonte Mulish/Fraunces do pai */
+    font-size: 1rem;
+    /* Tamanho legível */
+    box-sizing: border-box;
+}
+
+/* Estilizar CAIXAS dos INPUTS */
+.grupo-input {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilizar INPUTS, SELECTS, TEXTAREA (campos para digitar) */
+.grupo-input input,
+.grupo-input select,
+.grupo-input textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--cor-bordas-campos-formulario);
+    border-radius: 10px;
+    background-color: var(--cor-fundo-campos-formularios);
+    font-family: var(--fonte-corpo);
+    font-size: 1rem;
+    color: var(--cor-texto);
+    transition: all 0.3s ease;
+}
+
+/* Ajuste especifico para caixa de mensagem (TEXTAREA) */
+.grupo-input textarea {
+    height: 150px;
+    resize: vertical;
+    /* permite esticar o campo para baixo */
+}
+
+/* Efeito de foco ao clicar para digitar */
+.grupo-input input:focus,
+.grupo-input select:focus,
+.grupo-input textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    background-color: var(--cor-neutra);
+    box-shadow: 0 0 4px 4px var(--cor-sombra-campos-formularios);
+    /* horizontal, vertical, desfoque, espalhamento (tamanho da sombra)  */
+}
+
+
+/* BOTOES do FORMULARIO (Geral) */
+.grupo-input button {
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    margin-top: 10px;
+}
+
+/* BOTÃO ENVIAR (Primeiro botão do grupo ou 'not reset') */
+.grupo-input button:first-child,
+.grupo-input button:not([type="reset"]) {
+    background-color: var(--cor-primaria);
+    color: var(--cor-neutra);
+    width: 100%;
+    box-shadow: 0 4px 10px var(--cor-sombra-botoes-formularios);
+}
+
+.grupo-input button:first-child:hover,
+.grupo-input button:not([type="reset"]):hover {
+    background-color: var(--cor-secundaria);
+    transform: translateY(-2px);
+    color: var(--cor-neutra);
+}
+
+/* BOTÃO LIMPAR */
+.grupo-input button[type="reset"] {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    color: var(--cor-texto-suave);
+    font-size: 0.9rem;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    width: auto;
+    align-self: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grupo-input button[type="reset"]:hover {
+    color: var(--cor-erro);
+    text-decoration: underline;
+    background-color: transparent;
+    transform: none;
+}
+
+/* Estilizar Campo/Input ANEXO */
+.grupo-input input[type="file"] {
+    padding: 8px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Estilizar BOTAO ESCOLHER ARQUIVO */
+.grupo-input input[type="file"]::file-selector-button {
+    background-color: var(--cor-primaria);
+    color: var(--cor-neutra);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px;
+    margin-right: 15px;
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* HOVER BOTÃO ESCOLHER ARQUIVO */
+.grupo-input input[type="file"]::file-selector-button:hover {
+    background-color: var(--cor-secundaria);
+    transform: translateY(-2px);
+}
+
+/* Adiciona espaço extra acima do Select de Sabores e da Data de Entrega */
+.grupo-input:has(select),
+.grupo-input:has(input[type="date"]) {
+    margin-top: 25px;
+}
+
+/* Ajustes BOTOES RADIO e CHECKBOX */
+.grupo-input:has(input[type="radio"]),
+.grupo-input:has(input[type="checkbox"]) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+/* RESET RADIO/CHECKBOX */
+.grupo-input input[type="radio"],
+.grupo-input input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+    box-shadow: none;
+    cursor: pointer;
+    transform: scale(1.3);
+    accent-color: var(--cor-sucesso);
+}
+
+/* Estilo de TEXTO das OPÇÕES (INPUT RADIO/CHECKBOX) */
+.grupo-input:has(input[type="radio"]) label,
+.grupo-input:has(input[type="checkbox"]) label {
+    margin-bottom: 0;
+    font-family: var(--fonte-corpo);
+    font-weight: 400;
+    color: var(--cor-texto);
+    cursor: pointer;
+    font-size: 1.0rem;
+}
+
+/* HOVER no INPUT RADIO na opção inteira */
+.grupo-input:has(input[type="radio"]):hover label,
+.grupo-input:has(input[type="checkbox"]):hover label {
+    color: var(--cor-primaria);
+}
+
+/* SELECT: ajuste do menu suspenso de sabores (lista) */
+.grupo-input select {
+    cursor: pointer;
+    appearance: none;
+    /* remove a seta padrao feia do navegador e inclui SETA PERSONALIZADA LARANJA */
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23D98C45%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 12px auto;
+}
+
+/* COMENTARIOS: Ajustes - FORMULARIO FEEDBACK */
+.grupo-input:has(label[for="comentario"]) {
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+.grupo-input:has(input[type="checkbox"]) {
+    margin-bottom: 25px;
+}
+
+/* RODAPE DOS RELATORIOS/FORMULARIOS */
+.footer-relatorios {
+    max-height: fit-content;
+    padding: 20px 20px 10px 10px;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Forçamos o container interno a também alinhar à esquerda */
+.footer-relatorios .tabela-horario-localizacao {
+    justify-content: flex-start;
+    /* Joga o conteúdo para a esquerda */
+    width: 100%;
+    margin-left: 0;
+    /* Garante que não tenha margem empurrando */
+}
+
+/* Ajuste na seção de redes sociais para garantir alinhamento */
+.footer-relatorios .redes-sociais {
+    text-align: left;
+    padding-left: 30px;
+}
+
+/* Centraliza o titulo APENAS da seção de redes sociais na Home */
+.redes-sociais h2 {
+    text-align: left;
+    width: 100%;
+    /* Garante que o texto ocupe a largura toda para centralizar */
+}
+
+/* Regra específica para apertar a coluna Social perto do Mapa */
+.tabela-horario-localizacao .redes-sociais {
+    flex: 0 1 auto;
+    /* flex: 0 -> Não crescer; auto -> largura automática baseada no conteúdo */
+
+    min-width: auto;
+    /* Importante: Sobrescreve o min-width de 300px que estava empurrando tudo */
+
+    width: fit-content;
+    /* Garante que o bloco fique apenas do tamanho dos ícones */
+}
+
+/* (Opcional) para manter os CREDITOS centralizados no final: */
+.footer-relatorios .creditos-footer {
+    align-self: center;
+    /* sobrescreve o alinhamento a esquerda apenas para os creditos */
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    /* border-top: none; */
+    /* (Opcional) Remove a linha cinza para limpar o visual */
+}
+
+/* RESPONSIVIDADE GERAL */
+
+/* Notebooks e Tablets (Telas até 1350px) */
+@media (max-width: 1350px) {
+    .cabecalho {
+        padding: 10px 15px;
+        grid-template-columns: auto 1fr auto;
+        gap: 10px;
+    }
+
+    .logo-link img {
+        height: 70px;
+        /* Força a logo a diminuir APENAS nessas telas */
+    }
+
+    .menu-interno a {
+        font-size: 1rem;
+        /* Diminui a fonte APENAS nessas telas */
+    }
+
+    .botao-menu-principal {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Celulares (Telas até 768px) */
+@media (max-width: 768px) {
+
+    /* CABEÇALHO MOBILE */
+    .cabecalho {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        position: static;
+        height: auto;
+    }
+
+    .logo-link {
+        justify-self: center;
+        margin-bottom: 5px;
+    }
+
+    .logo-link img {
+        height: 90px;
+    }
+
+    .menu-interno ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-right: 0;
+    }
+
+    .menu-interno a {
+        font-size: 1.1rem;
+        color: var(--cor-destaque);
+    }
+
+    .menu-principal {
+        justify-self: center;
+        width: 100%;
+    }
+
+    .menu-principal ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .botao-menu-principal {
+        width: 100%;
+        text-align: center;
+        display: block;
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    /* FORMULARIOS MOBILE (UNIFICADO) */
+    .formulario-contato,
+    .formulario-pedidos,
+    .formulario-feedback,
+    .formulario-cadastro {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .h1-contato,
+    .h1-pedidos,
+    .h1-feedback,
+    .h1-cadastro {
+        font-size: 2rem;
+    }
+
+    /* --- CORREÇÃO FOOTER HOME (Alinhamento à Esquerda) --- */
+
+    /* Vence o 'fit-content' e força a caixa a ocupar a tela toda no MOBILE */
+    footer .tabela-horario-localizacao .redes-sociais {
+        width: 100% !important;
+        align-items: flex-start !important;
+        /* Garante alinhamento vertical à esquerda */
+        text-align: left !important;
+        padding-left: 0 !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Garante que o título 'Social:' vá para a esquerda */
+    footer .redes-sociais h2 {
+        text-align: left !important;
+        width: 100%;
+        margin-left: 0 !important;
+    }
+
+    /* Tira o 'center' dos ícones e joga para o início (esquerda) */
+    footer .icones-redes-sociais {
+        justify-content: flex-start !important;
+        margin-left: 0 !important;
+        width: 100%;
+        padding-left: 0 !important;
+    }
+}
+
+/* CORREÇÃO DE TABELAS NO MOBILE */
+.container-scroll-tabela {
+    width: 100%;
+    overflow-x: auto;
+    /* A Mágica: Cria rolagem lateral se estourar */
+    -webkit-overflow-scrolling: touch;
+    /* Rolagem suave em iPhones */
+    margin-bottom: 20px;
+}
+
+/* DEPOIMENTOS (CARROSSEL INFINITO) */
+
+.secao-depoimentos {
+    padding: 60px 0;
+    background-color: var(--cor-bg-body02);
+    overflow: hidden;
+    width: 100%;
+}
+
+.titulo-depoimentos {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.titulo-depoimentos h2 {
+    color: var(--cor-secundaria);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+/* CONTAINER (A JANELA) */
+.carrossel-infinito {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+    /* Sombras laterais (fades) */
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+/* O TRILHO (A PISTA QUE SE MOVE) */
+.trilho-carrossel {
+    display: flex;
+    gap: 30px;
+    /* Espaço entre cards */
+    width: max-content;
+    /* Esse padding compensa o 'gap' no final para o cálculo de 50% bater exato */
+    padding-right: 30px;
+    /* Animação renomeada para português */
+    animation: rolagem-infinita 40s linear infinite;
+}
+
+/* PAUSE NO HOVER */
+.trilho-carrossel:hover {
+    animation-play-state: paused;
+}
+
+/* CARD DEPOIMENTO */
+.card-depoimento {
+    background-color: var(--cor-neutra);
+    width: 350px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px var(--cor-sombra-tabela);
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 5px solid var(--cor-primaria);
+}
+
+/* HEADER DO CARD */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.card-header .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--cor-destaque);
+}
+
+.info-autor h3 {
+    font-size: 1.1rem;
+    color: var(--cor-secundaria);
+    margin: 0;
+}
+
+.tag-fidelidade {
+    font-size: 0.8rem;
+    background-color: var(--cor-destaque);
+    color: var(--cor-secundaria);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+/* BODY DO CARD */
+.card-body {
+    margin-bottom: 15px;
+}
+
+.card-body p {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.1rem;
+}
+
+/* FOOTER DO CARD */
+.card-footer {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+/* A ANIMAÇÃO (RENOMEADA) */
+@keyframes rolagem-infinita {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* RESPONSIVIDADE DEPOIMENTOS */
+@media (max-width: 768px) {
+    .card-depoimento {
+        width: 280px;
+        padding: 20px;
+    }
+
+    .trilho-carrossel {
+        animation-duration: 30s;
+        /* Mais rápido no mobile */
+    }
+}
+
+/* AJUSTE DO BOTÃO WHATSAPP APENAS PARA MOBILE*/
+@media (max-width: 768px) {
+    .btn-whatsapp {
+        /* Aumentamos o 'bottom' para ele subir na tela */
+        bottom: 100px; 
+        
+        right: 20px;  
+        width: 50px;  
+        height: 50px;
+        z-index: 2000; /* Garante que fique acima de tudo */
+    }
+
+    .btn-whatsapp svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Esconde o texto de ajuda no mobile para limpar o visual */
+    .tooltip-whatsapp {
+        display: none !important;
+    }
+}
+
+/* AJUSTE DO CARRINHO LATERAL NO MOBILE */
+@media (max-width: 768px) {
+    #carrinho-lateral {
+        width: 90%; /* Em vez de 350px fixos, ele ocupa 90% da largura do celular */
+        box-shadow: -10px 0 20px rgba(0, 0, 0, 0.4); /* Sombra mais forte para destacar do fundo */
+    }
+
+    /* Opcional: Aumentar um pouco o padding interno no mobile para facilitar o toque */
+    .carrinho-body {
+        padding: 15px;
+    }
+
+    .btn-finalizar-whats {
+        padding: 18px; /* Botão maior para o polegar no mobile */
+        font-size: 1.2rem;
+    }
+}

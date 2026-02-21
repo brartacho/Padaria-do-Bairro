@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- ICONE ABA NAVEGADOR -->
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/5771/5771970.png" type="image/x-icon">
+    <!-- link:favicon -->
+
+    <!-- link da fonte TITULO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- link fonte CORPO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="body-feedback">
+    <header class="cabecalho">
+        <!-- Logo padaria -->
+        <a href="./index.html" class="logo-link">
+            <img src="./images/logo/logo_padaria.png" alt="Logo Padaria do Bairro">
+        </a>
+
+        <nav class="menu-principal">
+            <ul>
+                <li><a href="./index.html" class="botao-menu-principal">Home</a></li>
+                <li><a href="./contato.html" class="botao-menu-principal">Contato</a></li>
+                <li><a href="./pedidos.html" class="botao-menu-principal">Pedidos</a></li>
+                <li><a href="./feedback.html" class="botao-menu-principal ativo">Feedback</a></li>
+                <li><a href="./cadastro.html" class="botao-menu-principal">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="h1-feedback">Queremos ouvir você!</h1>
+
+        <h2 class="h2-feedback">Conte-nos como foi sua experiência.</h2>
+
+        <form class="formulario-feedback" action="">
+
+            <div class="grupo-input">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" placeholder="Digite seu nome completo">
+            </div>
+
+            <div class="grupo-input">
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email">
+            </div>
+
+            <div class="grupo-input">
+                <label for="produto-servico">Produto/Serviço: <span style="color: var(--cor-erro);">*</span></label>
+                <select name="produto-servico" id="produto-servico" required>
+                    <option value=""></option>
+                    <option value="">🥖 Pães tradicionais</option>
+                    <option value="">🍰 Doces e bolos</option>
+                    <option value="">🥐 Salgados</option>
+                    <option value="">👥 Atendimento</option>
+                    <option value="">🏠 Ambiente</option>
+                    <option value="">💲 Preços</option>
+                </select>
+            </div>
+
+
+            <div class="grupo-input">
+                <h2>Avaliação Geral: <span style="color: var(--cor-erro); font-size: 1.1rem;">*</span></h2>
+            </div>
+
+            <div class="grupo-input">
+                <input type="radio" name="avaliacao" id="excelente" required>
+                <label for="excelente">🌟 Excelente</label>
+            </div>
+
+            <div class="grupo-input">
+                <input type="radio" name="avaliacao" id="bom" required>
+                <label for="bom">👍 Bom</label>
+            </div>
+
+            <div class="grupo-input">
+                <input type="radio" name="avaliacao" id="regular" required>
+                <label for="regular">😐 Regular</label>
+            </div>
+
+            <div class="grupo-input">
+                <input type="radio" name="avaliacao" id="ruim" required>
+                <label for="ruim">👎 Ruim</label>
+            </div>
+
+            <div class="grupo-input">
+                <label for="comentario">Comentários:</label>
+            </div>
+
+            <div class="grupo-input">
+                <textarea name="comentario" id="comentario" placeholder="Digite aqui seu comentário."></textarea>
+            </div>
+
+            <div class="grupo-input">
+                <p>👍 Recomendaria para amigos?</p>
+            </div>
+
+            <div class="grupo-input">
+                <input type="checkbox" name="sim" id="sim">
+                <label for="sim">Sim, com certeza!😋</label>
+            </div>
+
+
+            <!--
+            <input type="radio" name="indicacao" id="sim">
+            <label for="sim">Sim ✅</label>
+            
+            
+            <input type="radio" name="indicacao" id="nao">
+            <label for="nao">Não ❌</label>
+             -->
+
+            <!--
+            <label for="regua">Não🙁</label>
+            <input type="range" name="regua" id="regua">
+            <label for="regua">😋Sim</label>
+            -->
+
+            <div class="grupo-input">
+                <p>📰 Autoriza publicação do seu depoimento?</p>
+            </div>
+
+            <div class="grupo-input">
+                <input type="checkbox" name="s-autorizo" id="s-autorizo">
+                <label for="s-autorizo">Sim, autorizo.✔</label>
+            </div>
+
+            <!--<input type="radio" name="autorizacao" id="s-autoriza">-->
+            <!--
+           
+            <input type="radio" name="autorizacao" id="n-autorizo">
+            <label for="n-autorizo">Não autorizo ✖</label>
+            -->
+
+            <div class="grupo-input">
+                <button>Enviar</button>
+            </div>
+
+            <div class="grupo-input">
+                <button type="reset">Limpar Formulário</button>
+            </div>
+
+        </form>
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer class="footer-relatorios">
+        <div class="tabela-horario-localizacao">
+
+            <section class="redes-sociais">
+                <h2>Social:</h2>
+
+                <div class="icones-redes-sociais">
+                    <!-- INSTAGRAM -->
+                    <a href="https://www.instagram.com/dobairrocafeteria/" target="_blank" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+
+                    <!-- FACEBOOK -->
+                    <a href="https://facebook.com/padariadobairro" target="_blank" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+
+                    <!-- YOUTUBE -->
+                    <a href="https://www.youtube.com/@yummy_yammy" target="_blank" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z">
+                            </path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+
+        <section class="creditos-footer">
+            <p>&copy; 2026 Padaria do Bairro - Todos os direitos reservados.</p>
+            <P>Desenvolvido por: Bruno Artacho.</P>
+        </section>
+
+    </footer>
+
+
+    <!-- BOTÃO WHATSAPP -->
+    <a href="https://wa.me/5544984366533?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido." class="btn-whatsapp"
+        target="_blank" aria-label="Falar no WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="WhatsApp" role="img" viewBox="0 0 512 512" fill="#000000">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <rect width="512" height="512" rx="15%" fill="#25d366"></rect>
+                <path fill="#25d366" stroke="#ffffff" stroke-width="26" d="M123 393l14-65a138 138 0 1150 47z"></path>
+                <path fill="#ffffff"
+                    d="M308 273c-3-2-6-3-9 1l-12 16c-3 2-5 3-9 1-15-8-36-17-54-47-1-4 1-6 3-8l9-14c2-2 1-4 0-6l-12-29c-3-8-6-7-9-7h-8c-2 0-6 1-10 5-22 22-13 53 3 73 3 4 23 40 66 59 32 14 39 12 48 10 11-1 22-10 27-19 1-3 6-16 2-18">
+                </path>
+            </g>
+        </svg>
+        <span class="tooltip-whatsapp">Fale Conosco</span>
+    </a>
+
+</body>
+
+</html>

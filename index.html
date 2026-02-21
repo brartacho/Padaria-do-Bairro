@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<!--  tipo de documento-->
+<html lang="pt-BR">
+<!-- linguangem -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- define os caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ajudar na responsividade -->
+    <title>Padaria do Bairro</title>
+    <!-- título da aba do navegador -->
+
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- ICONE ABA NAVEGADOR -->
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/5771/5771970.png" type="image/x-icon">
+    <!-- link:favicon -->
+
+    <!-- link da fonte TITULO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- link fonte CORPO -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+
+    <!-- link fonte corpo DEPOIMENTOS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!-- Cabeçalho do site -->
+    <header class="cabecalho">
+
+        <!-- Logo padaria -->
+        <a href="./index.html" class="logo-link">
+            <img src="./images/logo/padaria_do_bairro_logo_optimized.webp" alt="logo_padaria">
+        </a>
+
+        <!-- menu de navegação entre itens da página principal-->
+        <nav class="menu-interno">
+            <ul>
+                <li><a href="#sobre-historia">Sobre</a></li>
+                <li><a href="#tabela-cardapio">Cardápio</a></li>
+                <li><a href="#promocoes-cardapio">Promoções</a></li>
+                <li><a href="#tabela-horario">Horários</a></li>
+                <!-- <li><a href="https://youtu.be/gt7zOP_wPfM" target="_blank">YouTube</a></li> -->
+                <!-- Coloquei essa informação no footer para não poluir o menu interno da Home -->
+
+
+                <!-- a é tag de link -->
+                <!-- href é o atributo que recebe o link -->
+            </ul>
+        </nav>
+
+        <nav class="menu-principal">
+            <ul>
+                <li><a href="./index.html" class="botao-menu-principal ativo">Home</a></li>
+                <li><a href="./contato.html" class="botao-menu-principal">Contato</a></li>
+                <li><a href="./pedidos.html" class="botao-menu-principal">Pedidos</a></li>
+                <li><a href="./feedback.html" class="botao-menu-principal">Feedback</a></li>
+                <li><a href="./cadastro.html" class="botao-menu-principal">Cadastro</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- titulo -->
+    <section class="banner-inicial">
+        <h1>Padaria do Bairro</h1>
+        <p>O lugar onde o sabor transforma-se em arte.</p>
+    </section>
+
+    <!-- Conteudo principal -->
+    <main>
+
+        <!-- Seção sobre a padaria -->
+        <section id="sobre-padaria" class="banner-video">
+            <!-- id um identificador -->
+
+            <div class="video-descricao">
+                <h2>Conheça nossa tradição:</h2>
+                <p>Tradição em cada fornada e frescor em cada detalhe.</p>
+                <p>Sua parada obrigatória para um café quentinho e</p>
+                <p>pães artesanais no coração do bairro.</p>
+            </div>
+
+            <video autoplay muted loop playsinline poster="./images/ambiente/padaria_banner.jpg">
+                <source src="./videos/padaria.mp4" type="video/mp4">
+                <!-- muted: é obrigatório. Os navegadores modernos só permitem o autoplay se o vídeo estiver mudo. -->
+
+                <p>Seu navegador não suporta a reprodução de vídeos.
+                    <a href="./videos/padaria.mp4" download>Clique aqui para baixar o vídeo</a>.
+                </p>
+
+            </video>
+        </section>
+
+        <section id="sobre-historia" class="sobre-tradicao">
+
+            <div class="sobre-container">
+                <div class="sobre-texto">
+                    <span class="subtitulo-destaque">Desde 1998</span>
+                    <h2>Mais que Pão, <br>Uma História de Família</h2>
+                    <p>
+                        Tudo começou com uma receita da Vó Clotilde e um sonho. Enquanto a cidade ainda dorme,
+                        nosso forno já está aceso. Acreditamos que o segredo não está na farinha, mas no
+                        <strong>tempo</strong> e no <strong>amor</strong> que dedicamos a cada fornada.
+                    </p>
+                    <p>
+                        Aqui, a fermentação é natural, o café é moído na hora e o sorriso é o ingrediente
+                        que nunca falta.
+                    </p>
+                    <div class="selo-qualidade">
+                        <p>100% Artesanal</p>
+                    </div>
+                </div>
+
+                <div class="sobre-midia">
+                    <img src="./images/ambiente/sobre_tradicao.webp" alt="Padeiro amassando pão artesanal">
+                </div>
+            </div>
+
+            <div class="faixa-numeros">
+                <div class="item-numero">
+                    <h3>+25</h3>
+                    <p>Anos de Tradição</p>
+                </div>
+                <div class="item-numero">
+                    <h3>10k+</h3>
+                    <p>Clientes Felizes</p>
+                </div>
+                <div class="item-numero">
+                    <h3>∞</h3>
+                    <p>Cafézinhos Servidos</p>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="tabela-cardapio">
+            <h2>Nosso Cardápio</h2>
+
+            <div class="container-scroll-tabela">
+                <table>
+                    <thead class="cabecalho-tabela-cardapio">
+                        <tr>
+                            <th>Produto</th>
+                            <th>Descrição</th>
+                            <th>Preço</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="corpo-tabela-cardapio">
+                        <tr class="linha-categoria">
+                            <td colspan="3">Pães Fresquinhos</td>
+                            <!-- colspan: mescla colunas horizontalmente. -->
+                        </tr>
+                        <tr>
+                            <td>Pão Francês</td>
+                            <td>O clássico indispensável, com casca dourada e crocante e miolo super macio.</td>
+                            <td>R$ 1,50</td>
+                        </tr>
+                        <tr>
+                            <td>Pão Integral</td>
+                            <td>Produzido com farinha 100% integral e grãos selecionados.</td>
+                            <td>R$ 2,00</td>
+                        </tr>
+                        <tr>
+                            <td>Pão de Açúcar</td>
+                            <td>Pão doce fofinho com uma generosa cobertura de açúcar cristal.</td>
+                            <td>R$ 2,50</td>
+                        </tr>
+
+                        <tr class="linha-categoria">
+                            <td colspan="3">Salgados Artesanais</td>
+                        </tr>
+                        <tr>
+                            <td>Croissant</td>
+                            <td>Massa folhada amanteigada, leve e extremamente crocante.</td>
+                            <td>R$ 9,00</td>
+                        </tr>
+                        <tr>
+                            <td>Coxinha</td>
+                            <td>Massa de batata tradicional com recheio suculento de frango desfiado.</td>
+                            <td>R$ 6,00</td>
+                        </tr>
+                        <tr>
+                            <td>Pastel de Queijo</td>
+                            <td>Massa frita na hora, crocante e recheada com queijo derretido.</td>
+                            <td>R$ 10,00</td>
+                        </tr>
+                        <tr>
+                            <td>Esfirra</td>
+                            <td>Massa macia assada com tempero árabe tradicional.</td>
+                            <td>R$ 5,00</td>
+                        </tr>
+
+                        <tr class="linha-categoria">
+                            <td colspan="3">Doces & Tortas</td>
+                        </tr>
+                        <tr>
+                            <td>Bolo de Chocolate</td>
+                            <td>Massa úmida de chocolate intenso com cobertura de brigadeiro.</td>
+                            <td>R$ 12,00</td>
+                        </tr>
+                        <tr>
+                            <td>Torta de Morango</td>
+                            <td>Base crocante, creme de baunilha suave e morangos frescos.</td>
+                            <td>R$ 15,00</td>
+                        </tr>
+                        <tr>
+                            <td>Brownie com Nutella</td>
+                            <td>Massa artesanal de chocolate meio amargo com cobertura generosa de Nutella.</td>
+                            <td>R$ 15,00</td>
+                        </tr>
+
+                        <tr class="linha-categoria">
+                            <td colspan="3">Bebidas</td>
+                        </tr>
+                        <tr>
+                            <td>Café Coado</td>
+                            <td>Passado na hora, com aquele aroma inconfundível de casa.</td>
+                            <td>R$ 5,00</td>
+                        </tr>
+                        <tr>
+                            <td>Cappuccino</td>
+                            <td>Café expresso com leite vaporizado, espuma aveludada e um toque de chocolate.</td>
+                            <td>R$ 6,50</td>
+                        </tr>
+                        <tr>
+                            <td>Coca-Cola</td>
+                            <td>Lata de 350ml bem gelada.</td>
+                            <td>R$ 6,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <br>
+        <section id="galeria-produtos">
+            <h2>Nossos Produtos Fresquinhos:</h2>
+            <!-- div: Tag para Divisão -->
+            <div class="galeria-grid">
+                <img src="./images/produtos/Croissant.webp" alt="Croissant" height="200">
+                <img src="./images/produtos/paes.jpg" alt="paes" height="200">
+                <img src="./images/produtos/coxinha.jpg" alt="coxinha" height="200">
+                <img src="./images/produtos/pastel.jpeg" alt="pastel" height="200">
+                <img src="./images/ambiente/ambiente_padaria_01.webp" alt="ambiente_padaria_01" height="200">
+                <img src="./images/ambiente/ambiente_padaria_02.webp" alt="ambiente_padaria_02" height="200">
+                <img src="./images/produtos/cafe.jpg" alt="cafe">
+                <img src="./images/produtos/cafe_preto.webp" alt="cafe_preto">
+                <img src="./images/produtos/brownie.jpg" alt="brownie">
+                <img src="./images/produtos/torta_chocolate.webp" alt="torta_chocolate">
+                <!-- <img src="https://www.traverse-blog.com/wp-content/uploads/2025/02/Bread-Ahead-Bakery-London-UK-1-1536x1024.jpg" alt="donuts"> -->
+                <img src="./images/produtos/doces_variados.jpg" alt="doces_variados">
+                <img src="./images/ambiente/ambiente_padaria_03.jpg" alt="ambiente_padaria_03">
+            </div>
+        </section>
+
+        <section id="promocoes-cardapio">
+            <!-- seção do cardápio -->
+            <h2>Promoções:</h2>
+
+            <div class="cards-promocoes">
+                <article class="card-promocao">
+
+                    <span class="tag-mais-vendido">🏆 Mais Vendido</span>
+
+                    <h3>Hambúrguer Caseiro</h3>
+                    <img width="200" src="./images/promocoes/hamburguer.png" alt="Hambúrguer Caseiro">
+                    <p>Pão brioche, blend suculento, cheddar, alface, tomate, cebola roxa e picles com maionese
+                        especial.</p>
+                    <span class="preco-destaque">R$: 25,00</span>
+
+                    <div class="controles-pedido">
+                        <input type="number" id="qtd-hamburguer" value="1" min="1" max="20" class="input-qtd">
+                        <button class="btn-adicionar"
+                            onclick="adicionarAoCarrinho('Hambúrguer Caseiro', 25.00, 'qtd-hamburguer')">
+                            🛒 Adicionar
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card-promocao">
+                    <h3>Batata Frita</h3>
+                    <img width="200" src="./images/promocoes/batata.png" alt="Batata-frita">
+                    <p>Porção generosa (500g) e crocante. Acompanha ketchup e nossa exclusiva maionese caseira.</p>
+                    <span class="preco-destaque">R$: 15,00</span>
+
+                    <div class="controles-pedido">
+                        <input type="number" id="qtd-batata" value="1" min="1" max="20" class="input-qtd">
+                        <button class="btn-adicionar"
+                            onclick="adicionarAoCarrinho('Batata Frita', 15.00, 'qtd-batata')">
+                            🛒 Adicionar
+                        </button>
+                    </div>
+                </article>
+
+                <article class="card-promocao">
+                    <h3>Coca-Cola</h3>
+                    <img width="200" src="./images/promocoes/refrigerante.png" alt="Coca-Cola">
+                    <p>Lata 350ml do sabor original, servido trincando de gelada. Refrescância máxima para acompanhar
+                        seu pedido.</p>
+                    <span class="preco-destaque">R$: 5,00</span>
+
+                    <div class="controles-pedido">
+                        <input type="number" id="qtd-cocacola350ml" value="1" min="1" max="20" class="input-qtd">
+                        <button class="btn-adicionar"
+                            onclick="adicionarAoCarrinho('Coca-Cola 350ml', 5.00, 'qtd-cocacola350ml')">
+                            🛒 Adicionar
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="secao-depoimentos">
+            <div class="titulo-depoimentos">
+                <h2>O que a Vizinhança diz:</h2>
+                <p>Aprovação total da vila mais famosa do mundo!</p>
+            </div>
+
+            <div class="carrossel-infinito">
+
+                <div class="trilho-carrossel">
+
+                    <div class="card-depoimento">
+                        <div class="card-header">
+                            <img src="https://imagem.natelinha.uol.com.br/original/origem-do-chaves-no-sbt-e-revelada_52.jpeg"
+                                alt="Foto do Chaves" class="avatar">
+                            <div class="info-autor">
+                                <h3>Chaves</h3>
+                                <span class="tag-fidelidade">Cliente Faminto</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p>"Isso, isso, isso! O sanduíche de presunto daqui é o melhor do mundo! Ninguém tem
+                                paciência comigo, mas a padaria tem!"</p>
+                        </div>
+                        <div class="card-footer">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+                    <div class="card-depoimento">
+                        <div class="card-header">
+                            <img src="https://s2-oglobo.glbimg.com/jEHZM9eGDMyvvFcRlZHUzQyWIVc=/20x0:300x168/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2024/n/a/zPgRALQHSAJZnMks1jlQ/whatsapp-image-2024-09-06-at-20.55.41.jpeg"
+                                alt="Foto do Seu Madruga" class="avatar">
+                            <div class="info-autor">
+                                <h3>Seu Madruga</h3>
+                                <span class="tag-fidelidade">Conta Pendente</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p>"Só não te dou outro pãozinho porque... a padaria não vende fiado! Mas é coisa de
+                                primeira, viu?"</p>
+                        </div>
+                        <div class="card-footer">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+                    <div class="card-depoimento">
+                        <div class="card-header">
+                            <img src="https://s2-gshow.glbimg.com/lNuDrlzTAamKyGfFjsNNIpTqIDc=/0x0:620x349/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2024/w/N/8e14HnSU6sH8skr0OV0g/quico-original1.webp"
+                                alt="Foto do Quico" class="avatar">
+                            <div class="info-autor">
+                                <h3>Quico</h3>
+                                <span class="tag-fidelidade">Cliente Tesouro</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p>"Gentalha, gentalha! Digo... esse brioche é digno de um menino rico como eu! Você não vai
+                                ter!"</p>
+                        </div>
+                        <div class="card-footer">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+                    <div class="card-depoimento">
+                        <div class="card-header">
+                            <img src="https://diariodopara.com.br/wp-content/uploads/2022/10/dona-florinda-1024x576.jpg"
+                                alt="Foto da Dona Florinda" class="avatar">
+                            <div class="info-autor">
+                                <h3>Dona Florinda</h3>
+                                <span class="tag-fidelidade">Alta Sociedade</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p>"Vamos, Tesouro, não se misture com essa gentalha que não compra na Padaria do Bairro. O
+                                café é divino!"</p>
+                        </div>
+                        <div class="card-footer">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+                    <div class="card-depoimento">
+                        <div class="card-header">
+                            <img src="https://imagenes.elpais.com/resizer/v2/WTH33T43JQ4HCKAS6BHGGBYREQ.jpg?auth=0b9681f1575540f399950cb913c77b0dae8baf0de295a35fe78aab8fadb5e211&width=1000"
+                                alt="Foto do Professor Girafales" class="avatar">
+                            <div class="info-autor">
+                                <h3>Prof. Girafales</h3>
+                                <span class="tag-fidelidade">Mestre Linguiça</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p>"Tá ta ta ta! É o único lugar onde o café é servido com a etiqueta correta. Magnífico!"
+                            </p>
+                        </div>
+                        <div class="card-footer">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+                    <div class="card-depoimento">
+                        <div class="card-header">
+                            <img src="https://s2.glbimg.com/tZ43jR9r5lHvXzBrBsRcY7YU3kE=/s.glbimg.com/jo/g1/f/original/2016/06/17/dona-clotilde.jpg"
+                                alt="Foto da Dona Clotilde" class="avatar">
+                            <div class="info-autor">
+                                <h3>Dona Clotilde</h3>
+                                <span class="tag-fidelidade">Bruxa do 71</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p>"É para o meu Madruguinha... fiz um bolo especial com a receita secreta da padaria. Não é
+                                feitiçaria!"</p>
+                        </div>
+                        <div class="card-footer">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+                    <div class="card-depoimento">
+                        <div class="card-header">
+                            <img src="https://statics.otvfoco.com.br/2022/10/Chiquinha.png" alt="Foto da Chiquinha"
+                                class="avatar">
+                            <div class="info-autor">
+                                <h3>Chiquinha</h3>
+                                <span class="tag-fidelidade">A Esperta</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p>"Pois é, pois é, pois é! Consegui três pirulitos de brinde! O que você tem, eu tenho em
+                                dobro!"</p>
+                        </div>
+                        <div class="card-footer">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+                    <div class="card-depoimento">
+                        <div class="card-header">
+                            <img src="https://static.wikia.nocookie.net/dublagem/images/e/ef/Seu_barriga.jpg/revision/latest?cb=20250929063234&path-prefix=pt-br"
+                                alt="Foto do Senhor Barriga" class="avatar">
+                            <div class="info-autor">
+                                <h3>Sr. Barriga</h3>
+                                <span class="tag-fidelidade">Cliente VIP</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p>"Tinha que ser a Padaria do Bairro de novo! Aqui eu pago a conta com gosto, cada centavo
+                                vale a pena! E o melhor: ninguém me recebe com uma pancada!"</p>
+                        </div>
+                        <div class="card-footer">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+                    <!-- repetindo depoimentos para gerar o looping -->
+
+                    <div class="card-depoimento">
+                        <div class="card-header">
+                            <img src="https://imagem.natelinha.uol.com.br/original/origem-do-chaves-no-sbt-e-revelada_52.jpeg"
+                                alt="Foto do Chaves" class="avatar">
+                            <div class="info-autor">
+                                <h3>Chaves</h3>
+                                <span class="tag-fidelidade">Cliente Faminto</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p>"Isso, isso, isso! O sanduíche de presunto daqui é o melhor do mundo! Ninguém tem
+                                paciência comigo, mas a padaria tem!"</p>
+                        </div>
+                        <div class="card-footer">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+                    <div class="card-depoimento">
+                        <div class="card-header">
+                            <img src="https://s2-oglobo.glbimg.com/jEHZM9eGDMyvvFcRlZHUzQyWIVc=/20x0:300x168/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2024/n/a/zPgRALQHSAJZnMks1jlQ/whatsapp-image-2024-09-06-at-20.55.41.jpeg"
+                                alt="Foto do Seu Madruga" class="avatar">
+                            <div class="info-autor">
+                                <h3>Seu Madruga</h3>
+                                <span class="tag-fidelidade">Conta Pendente</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p>"Só não te dou outro pãozinho porque... a padaria não vende fiado! Mas é coisa de
+                                primeira, viu?"</p>
+                        </div>
+                        <div class="card-footer">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+                    <div class="card-depoimento">
+                        <div class="card-header">
+                            <img src="https://s2-gshow.glbimg.com/lNuDrlzTAamKyGfFjsNNIpTqIDc=/0x0:620x349/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2024/w/N/8e14HnSU6sH8skr0OV0g/quico-original1.webp"
+                                alt="Foto do Quico" class="avatar">
+                            <div class="info-autor">
+                                <h3>Quico</h3>
+                                <span class="tag-fidelidade">Cliente Tesouro</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p>"Gentalha, gentalha! Digo... esse brioche é digno de um menino rico como eu! Você não vai
+                                ter!"</p>
+                        </div>
+                        <div class="card-footer">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+                    <div class="card-depoimento">
+                        <div class="card-header">
+                            <img src="https://diariodopara.com.br/wp-content/uploads/2022/10/dona-florinda-1024x576.jpg"
+                                alt="Foto da Dona Florinda" class="avatar">
+                            <div class="info-autor">
+                                <h3>Dona Florinda</h3>
+                                <span class="tag-fidelidade">Alta Sociedade</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p>"Vamos, Tesouro, não se misture com essa gentalha que não compra na Padaria do Bairro. O
+                                café é divino!"</p>
+                        </div>
+                        <div class="card-footer">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+                    <div class="card-depoimento">
+                        <div class="card-header">
+                            <img src="https://imagenes.elpais.com/resizer/v2/WTH33T43JQ4HCKAS6BHGGBYREQ.jpg?auth=0b9681f1575540f399950cb913c77b0dae8baf0de295a35fe78aab8fadb5e211&width=1000"
+                                alt="Foto do Professor Girafales" class="avatar">
+                            <div class="info-autor">
+                                <h3>Prof. Girafales</h3>
+                                <span class="tag-fidelidade">Mestre Linguiça</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p>"Tá ta ta ta! É o único lugar onde o café é servido com a etiqueta correta. Magnífico!"
+                            </p>
+                        </div>
+                        <div class="card-footer">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+                    <div class="card-depoimento">
+                        <div class="card-header">
+                            <img src="https://s2.glbimg.com/tZ43jR9r5lHvXzBrBsRcY7YU3kE=/s.glbimg.com/jo/g1/f/original/2016/06/17/dona-clotilde.jpg"
+                                alt="Foto da Dona Clotilde" class="avatar">
+                            <div class="info-autor">
+                                <h3>Dona Clotilde</h3>
+                                <span class="tag-fidelidade">Bruxa do 71</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p>"É para o meu Madruguinha... fiz um bolo especial com a receita secreta da padaria. Não é
+                                feitiçaria!"</p>
+                        </div>
+                        <div class="card-footer">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+                    <div class="card-depoimento">
+                        <div class="card-header">
+                            <img src="https://statics.otvfoco.com.br/2022/10/Chiquinha.png" alt="Foto da Chiquinha"
+                                class="avatar">
+                            <div class="info-autor">
+                                <h3>Chiquinha</h3>
+                                <span class="tag-fidelidade">A Esperta</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p>"Pois é, pois é, pois é! Consegui três pirulitos de brinde! O que você tem, eu tenho em
+                                dobro!"</p>
+                        </div>
+                        <div class="card-footer">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+                    <div class="card-depoimento">
+                        <div class="card-header">
+                            <img src="https://static.wikia.nocookie.net/dublagem/images/e/ef/Seu_barriga.jpg/revision/latest?cb=20250929063234&path-prefix=pt-br"
+                                alt="Foto do Senhor Barriga" class="avatar">
+                            <div class="info-autor">
+                                <h3>Sr. Barriga</h3>
+                                <span class="tag-fidelidade">Cliente VIP</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p>"Tinha que ser a Padaria do Bairro de novo! Aqui eu pago a conta com gosto, cada centavo
+                                vale a pena! E o melhor: ninguém me recebe com uma pancada!"</p>
+                        </div>
+                        <div class="card-footer">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <div class="tabela-horario-localizacao">
+            <section id="tabela-horario">
+                <!-- seção de tabela --> <!-- atividade de amanhã -->
+                <h2>Horário de Atendimento:</h2>
+
+                <table class="tabela-horario">
+                    <!-- a tag table é a tabela -->
+                    <thead class="cabecalho-tabela-horario">
+                        <!-- cabeçalho da tabela -->
+                        <tr>
+                            <!-- linha do cabeçalho -->
+                            <!-- titulo da coluna do cabeçalho -->
+                            <th class="celulas-horario-destaque">Dia</th>
+                            <th class="celulas-horario-centralizado">Abertura</th>
+                            <th class="celulas-horario-centralizado">Fechamento</th>
+                        </tr>
+                    </thead>
+                    <!-- para o corpo da tabela usaremos o tbody -->
+                    <tbody class="corpo-tabela-horario">
+                        <tr>
+                            <!--tr é a  linha da tabela -->
+                            <!-- palavra correspondente a coluna -->
+                            <td class="celulas-horario-destaque">2ª a 6ª:</td>
+                            <td class="celulas-horario-centralizado">07:00</td>
+                            <td class="celulas-horario-centralizado">20:00</td>
+                        </tr>
+
+                        <!-- linha 2 -->
+                        <tr>
+                            <td class="celulas-horario-destaque">Sábado:</td>
+                            <td class="celulas-horario-centralizado">07:00</td>
+                            <td class="celulas-horario-centralizado">19:00</td>
+                        </tr>
+
+                        <tr>
+                            <td class="celulas-horario-destaque">Domingo:</td>
+                            <td class="celulas-horario-centralizado">07:00</td>
+                            <td class="celulas-horario-centralizado">18:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="endereco">
+                <!-- endereço -->
+                <address>
+                    <h2>Localização:</h2>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.442305189168!2d-48.37537!3d-18.956063900000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a442ed5719852b%3A0x38b1880a12775afe!2sR.%20do%20Chaves%20-%20Uberl%C3%A2ndia%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1770255951341!5m2!1spt-BR!2sbr"
+                        width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </address>
+            </section>
+
+            <section class="redes-sociais">
+                <h2>Social:</h2>
+
+                <div class="icones-redes-sociais">
+                    <!-- INSTAGRAM -->
+                    <a href="https://www.instagram.com/dobairrocafeteria" target="_blank" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+
+                    <!-- FACEBOOK -->
+                    <a href="https://facebook.com/padariadobairro" target="_blank" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+
+                    <!-- YOUTUBE -->
+                    <a href="https://www.youtube.com/@yummy_yammy" target="_blank" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z">
+                            </path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+
+        <section class="creditos-footer">
+            <p>&copy; 2026 Padaria do Bairro - Todos os direitos reservados.</p>
+            <P>Desenvolvido por: Bruno Artacho.</P>
+        </section>
+
+
+    </footer>
+
+    <!-- BOTÃO WHATSAPP -->
+    <a href="https://wa.me/5544984366533?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido." class="btn-whatsapp"
+        target="_blank" aria-label="Falar no WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="WhatsApp" role="img" viewBox="0 0 512 512" fill="#000000">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <rect width="512" height="512" rx="15%" fill="#25d366"></rect>
+                <path fill="#25d366" stroke="#ffffff" stroke-width="26" d="M123 393l14-65a138 138 0 1150 47z"></path>
+                <path fill="#ffffff"
+                    d="M308 273c-3-2-6-3-9 1l-12 16c-3 2-5 3-9 1-15-8-36-17-54-47-1-4 1-6 3-8l9-14c2-2 1-4 0-6l-12-29c-3-8-6-7-9-7h-8c-2 0-6 1-10 5-22 22-13 53 3 73 3 4 23 40 66 59 32 14 39 12 48 10 11-1 22-10 27-19 1-3 6-16 2-18">
+                </path>
+            </g>
+        </svg>
+        <span class="tooltip-whatsapp">Fale Conosco</span>
+    </a>
+
+    <!-- CARRINHO DE COMPRAS -->
+    <section class="carrinho-compras">
+        <div id="carrinho-lateral" class="carrinho-oculto">
+            <div class="carrinho-header">
+                <h3>Seu Pedido</h3>
+                <button onclick="fecharCarrinho()" class="btn-fechar-carrinho">X</button>
+            </div>
+
+            <div id="itens-carrinho" class="carrinho-body">
+                <p class="carrinho-vazio">Seu carrinho está vazio.</p>
+            </div>
+
+            <div class="carrinho-footer">
+
+                <div class="dados-cliente">
+                    <input type="text" id="nome-cliente" placeholder="Seu Nome Completo" class="input-checkout">
+
+                    <div class="opcoes-entrega">
+                        <label>
+                            <input type="radio" name="modo-entrega" value="Delivery" checked
+                                onchange="alternarModoEntrega()">
+                            🛵 Delivery
+                        </label>
+                        <label>
+                            <input type="radio" name="modo-entrega" value="Retirada" onchange="alternarModoEntrega()">
+                            🏬 Retirar no Balcão
+                        </label>
+                    </div>
+
+                    <div id="dados-delivery" class="grupo-delivery">
+                        <input type="text" id="endereco-cliente" placeholder="Endereço (Rua, Nº, Bairro)"
+                            class="input-checkout" style="margin-bottom: 10px;">
+
+                        <input type="text" id="complemento-cliente" placeholder="Complemento (Apto, Bloco) - Opcional"
+                            class="input-checkout" style="margin-bottom: 10px;">
+
+                        <select id="pagamento-cliente" class="input-checkout select-checkout"
+                            onchange="verificarTroco()">
+                            <option value="" disabled selected>Forma de Pagamento (Na entrega)</option>
+                            <option value="Pix">Pix (Chave enviada no Whats)</option>
+                            <option value="Cartão">Cartão (Levar Maquininha)</option>
+                            <option value="Dinheiro">Dinheiro</option>
+                        </select>
+
+                        <input type="number" id="troco-cliente" placeholder="Troco para quanto? (Opcional)"
+                            class="input-checkout oculto" min="0" style="margin-top: 10px;">
+                    </div>
+                </div>
+                <div class="total-pedido">Total: <span id="valor-total">R$ 0,00</span></div>
+                <button onclick="finalizarPedidoWhatsApp()" class="btn-finalizar-whats">
+                    Concluir no WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/script.js"></script>
+
+    <script>
+        let carrinho = [];
+
+        function adicionarAoCarrinho(nomeProduto, precoProduto, idInputQtd) {
+            const inputQtd = document.getElementById(idInputQtd);
+            const quantidade = parseInt(inputQtd.value);
+            const limiteMaximo = parseInt(inputQtd.max) || 20;
+
+            if (isNaN(quantidade) || quantidade <= 0) {
+                alert("Por favor, insira uma quantidade válida.");
+                return;
+            }
+
+            const itemExistente = carrinho.find(item => item.nome === nomeProduto);
+            let quantidadeFutura = quantidade;
+
+            if (itemExistente) {
+                quantidadeFutura += itemExistente.quantidade;
+            }
+
+            if (quantidadeFutura > limiteMaximo) {
+                alert(`Atenção: O limite máximo por encomenda é de ${limiteMaximo} unidades de ${nomeProduto}.`);
+                inputQtd.value = 1;
+                return;
+            }
+
+            if (itemExistente) {
+                itemExistente.quantidade += quantidade;
+            } else {
+                carrinho.push({ nome: nomeProduto, preco: precoProduto, quantidade: quantidade });
+            }
+
+            inputQtd.value = 1;
+            renderizarCarrinho();
+            abrirCarrinho();
+        }
+
+        function renderizarCarrinho() {
+            const containerItens = document.getElementById('itens-carrinho');
+            const displayTotal = document.getElementById('valor-total');
+            let total = 0;
+
+            containerItens.innerHTML = '';
+
+            if (carrinho.length === 0) {
+                containerItens.innerHTML = '<p class="carrinho-vazio">Seu carrinho está vazio.</p>';
+                displayTotal.innerText = 'R$ 0,00';
+                return;
+            }
+
+            carrinho.forEach((item, index) => {
+                const subtotal = item.preco * item.quantidade;
+                total += subtotal;
+
+                containerItens.innerHTML += `
+                    <div class="item-carrinho">
+                        <div><strong>${item.quantidade}x</strong> ${item.nome}</div>
+                        <div>
+                            <span>R$ ${subtotal.toFixed(2).replace('.', ',')}</span>
+                            <button onclick="removerItem(${index})" class="btn-remover">🗑️</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            displayTotal.innerText = `R$ ${total.toFixed(2).replace('.', ',')}`;
+        }
+
+        function removerItem(index) {
+            carrinho.splice(index, 1);
+            renderizarCarrinho();
+        }
+
+        function abrirCarrinho() {
+            document.getElementById('carrinho-lateral').classList.remove('carrinho-oculto');
+        }
+
+        function fecharCarrinho() {
+            document.getElementById('carrinho-lateral').classList.add('carrinho-oculto');
+        }
+
+        // --- FUNÇÕES NOVAS DO CHECKOUT INTELIGENTE ---
+        function verificarTroco() {
+            const selectPagamento = document.getElementById('pagamento-cliente');
+            const inputTroco = document.getElementById('troco-cliente');
+
+            if (selectPagamento && inputTroco) {
+                if (selectPagamento.value === "Dinheiro") {
+                    inputTroco.classList.remove('oculto');
+                } else {
+                    inputTroco.classList.add('oculto');
+                    inputTroco.value = "";
+                }
+            }
+        }
+
+        function alternarModoEntrega() {
+            const radioSelecionado = document.querySelector('input[name="modo-entrega"]:checked');
+            const divDelivery = document.getElementById('dados-delivery');
+
+            if (radioSelecionado && divDelivery) {
+                if (radioSelecionado.value === "Retirada") {
+                    divDelivery.classList.add('oculto');
+                } else {
+                    divDelivery.classList.remove('oculto');
+                }
+            }
+        }
+
+        function finalizarPedidoWhatsApp() {
+            if (carrinho.length === 0) {
+                alert("Adicione itens ao carrinho antes de finalizar!");
+                return;
+            }
+
+            // 1. Capturar os dados básicos e travar se o HTML estiver incorreto
+            const nomeInput = document.getElementById('nome-cliente');
+            if (!nomeInput) {
+                alert("Erro Interno: O campo 'Nome' não foi encontrado no HTML.");
+                return;
+            }
+            const nome = nomeInput.value.trim();
+
+            const radioEntrega = document.querySelector('input[name="modo-entrega"]:checked');
+            if (!radioEntrega) {
+                alert("Erro Interno: As opções de Entrega/Retirada sumiram do HTML.");
+                return;
+            }
+            const modoEntrega = radioEntrega.value;
+
+            if (!nome) {
+                alert("Por favor, preencha o seu nome.");
+                nomeInput.focus();
+                return;
+            }
+
+            let endereco = "";
+            let complemento = "";
+            let pagamento = "";
+            let troco = "";
+
+            // Calcula o total
+            let totalCobranca = 0;
+            carrinho.forEach(item => {
+                totalCobranca += (item.preco * item.quantidade);
+            });
+
+            // 2. Validações SE FOR DELIVERY
+            if (modoEntrega === "Delivery") {
+                endereco = document.getElementById('endereco-cliente').value.trim();
+                complemento = document.getElementById('complemento-cliente').value.trim();
+                pagamento = document.getElementById('pagamento-cliente').value;
+                troco = document.getElementById('troco-cliente').value;
+
+                // Validação 1: Checa se está vazio
+                if (!endereco) {
+                    alert("Por favor, preencha o endereço de entrega.");
+                    document.getElementById('endereco-cliente').focus();
+                    return;
+                }
+
+                // Validação 2 (A Blindagem do QA): Checa se tem número ou S/N
+                // A Regex \d procura qualquer número. O s\/?n procura por sn ou s/n (ignorando maiúsculas/minúsculas pelo 'i')
+                const temNumeroOuSN = /\d|s\/?n/i.test(endereco);
+
+                if (!temNumeroOuSN) {
+                    alert("Atenção: Parece que você esqueceu o número do endereço!\nSe o local não tiver número, acrescente 'S/N'.");
+                    document.getElementById('endereco-cliente').focus();
+                    return;
+                }
+
+                if (!pagamento) {
+                    alert("Por favor, selecione uma forma de pagamento.");
+                    document.getElementById('pagamento-cliente').focus();
+                    return;
+                }
+
+                if (pagamento === "Dinheiro" && troco) {
+                    if (parseFloat(troco) < totalCobranca) {
+                        alert(`O valor para troco não pode ser menor que o total do pedido (R$ ${totalCobranca.toFixed(2).replace('.', ',')}).`);
+                        document.getElementById('troco-cliente').focus();
+                        return;
+                    }
+                }
+            }
+
+            // 3. Montar a mensagem do WhatsApp (Com Unicode Universal)
+            let textoPedido = `\uD83C\uDF5E *NOVO PEDIDO - Padaria do Bairro* \uD83C\uDF5E\n\n`;
+
+            // Capturar a Data e Hora exatas ---
+            const momentoAtual = new Date();
+            const dataPedido = momentoAtual.toLocaleDateString('pt-BR'); // Ex: 19/02/2026
+            const horaPedido = momentoAtual.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }); // Ex: 18:30
+            
+            // \u23F0 é o emoji de relógio (⏰)
+            textoPedido += `\u23F0 *Horário:* ${dataPedido} às ${horaPedido}\n`;
+
+            textoPedido += `\uD83D\uDC64 *Cliente:* ${nome}\n`;
+            textoPedido += `\uD83D\uDCE6 *Tipo:* ${modoEntrega}\n`;
+
+            if (modoEntrega === "Delivery") {
+                textoPedido += `\uD83D\uDCCD *Endereço:* ${endereco}\n`;
+                if (complemento) {
+                    textoPedido += `\uD83C\uDFE0 *Complemento:* ${complemento}\n`;
+                }
+                textoPedido += `\uD83D\uDCB3 *Pagamento:* ${pagamento}\n`;
+
+                if (pagamento === "Dinheiro") {
+                    if (troco) {
+                        const valorTrocoCalculado = parseFloat(troco) - totalCobranca;
+                        textoPedido += `\uD83D\uDCB5 *Troco para:* R$ ${parseFloat(troco).toFixed(2).replace('.', ',')} (Levar R$ ${valorTrocoCalculado.toFixed(2).replace('.', ',')})\n`;
+                    } else {
+                        textoPedido += `\uD83D\uDCB5 *Troco:* Não precisa (Valor Exato)\n`;
+                    }
+                }
+            } else {
+                textoPedido += `\uD83D\uDCB3 *Pagamento:* Será feito no balcão\n`;
+            }
+
+            textoPedido += `\n*--- RESUMO DO PEDIDO ---*\n\n`;
+
+            carrinho.forEach(item => {
+                const subtotal = item.preco * item.quantidade;
+                textoPedido += `\u25AA\uFE0F ${item.quantidade}x ${item.nome} - R$ ${subtotal.toFixed(2).replace('.', ',')}\n`;
+            });
+
+            textoPedido += `\n\uD83D\uDCB0 *TOTAL A PAGAR: R$ ${totalCobranca.toFixed(2).replace('.', ',')}*\n\n`;
+
+            const numeroWhatsApp = "5544984366533";
+            const urlFormatada = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(textoPedido)}`;
+
+            window.open(urlFormatada, '_blank');
+
+            // 4. Limpar formulário (Reset Inteligente)
+            carrinho = [];
+            document.getElementById('nome-cliente').value = "";
+
+            const elEndereco = document.getElementById('endereco-cliente');
+            if (elEndereco) elEndereco.value = "";
+
+            const elComplemento = document.getElementById('complemento-cliente');
+            if (elComplemento) elComplemento.value = "";
+
+            const elPagamento = document.getElementById('pagamento-cliente');
+            if (elPagamento) elPagamento.value = "";
+
+            const elTroco = document.getElementById('troco-cliente');
+            if (elTroco) {
+                elTroco.value = "";
+                elTroco.classList.add('oculto');
+            }
+
+            const radioDelivery = document.querySelector('input[name="modo-entrega"][value="Delivery"]');
+            if (radioDelivery) radioDelivery.checked = true;
+            alternarModoEntrega();
+
+            renderizarCarrinho();
+            fecharCarrinho();
+        }
+    </script>
+
+</body>
+
+</html>
