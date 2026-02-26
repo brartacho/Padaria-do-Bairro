@@ -1,76 +1,72 @@
 ========================================================================
-🥖 PROJETO: PADARIA DO BAIRRO (v6.0)
+🥖 PROJETO: PADARIA DO BAIRRO (v7.0)
 ========================================================================
 
 1. 📝 DESCRIÇÃO E EVOLUÇÃO
 ------------------------------------------------------------------------
 Website Institucional e de Serviços da "Padaria do Bairro". 
-A versão 6.0 marca a transição da etapa puramente estética para a 
-funcional. O foco atual é a implementação da camada de inteligência e a 
-blindagem da interface contra erros de renderização e usabilidade (UX).
+A versão 7.1 foca na limpeza da documentação e na consolidação do MVP.
+A camada de inteligência permite um sistema de carrinho persistente, 
+checkout dinâmico e filtros de busca em tempo real com alta performance.
 
-🚧 STATUS DO PROJETO: LÓGICA EM EXECUÇÃO
+🚧 STATUS DO PROJETO: MVP FUNCIONAL CONCLUÍDO
 - HTML5 (Estrutura): ✅ Concluído
 - CSS3 (Estilo & Responsividade): ✅ Concluído
-- JavaScript (Lógica de Negócio): ⏳ EM DESENVOLVIMENTO (Fase Ativa)
+- JavaScript (Lógica de Negócio): ✅ Concluído
 
 2. 🛠️ TECNOLOGIAS E TÉCNICAS APLICADAS
 ------------------------------------------------------------------------
-🔸 HTML5 Semântico: Estrutura otimizada para SEO e acessibilidade.
-🔸 CSS3 Moderno: Variáveis CSS (:root), Flexbox e Media Queries.
-🔸 Capsule Design: Botões de compra e quantidade unificados sem frestas.
-🔸 JS Vanilla: Manipulação de DOM para gestão do carrinho de compras.
-🔸 API WhatsApp: Geração de strings dinâmicas para fechamento de pedido.
+🔸 HTML5 Semântico: Estrutura otimizada para SEO.
+🔸 CSS3 Moderno: Variáveis, Flexbox, Media Queries e Efeitos de Blur.
+🔸 JS Vanilla: Gestão de estado do carrinho e manipulação do DOM.
+🔸 Web Storage API: LocalStorage para persistência do carrinho.
+🔸 API WhatsApp: Integração para envio de pedidos formatados.
 
 3. 📂 ORGANIZAÇÃO DE PASTAS E ARQUIVOS
 ------------------------------------------------------------------------
-/ (Raiz do Projeto)
-│
-├── index.html          # Página Inicial (Vitrine e Hooks do JS)
-├── contato.html        # SAC e Localização
-├── pedidos.html        # Encomendas Online
-├── feedback.html       # Pesquisa de Satisfação
-├── cadastro.html       # Cadastro de Clientes
-├── README.txt          # Documentação Técnica (Esta versão)
+PADARIA-DO-BAIRRO/ (Raiz do Projeto)
 │
 ├── css/
 │   └── style.css       # Estilização unificada e Responsividade
 │
-├── js/
-│   └── script.js       # Lógica do Carrinho (EM EXECUÇÃO)
+├── images/             # Ativos visuais organizados por categoria
+│   ├── ambiente/       # Fotos do local e fachada
+│   ├── depoimentos/    # Avatares de clientes
+│   ├── logo/           # Identidade visual
+│   ├── produtos/       # Imagens da vitrine
+│   └── promocoes/      # Imagens para cards de destaque
 │
-├── images/             # Diretório de ativos visuais otimizados
-└── videos/             # Mídia institucional (Banner Home)
+├── js/
+│   └── script.js       # Lógica do Carrinho, Checkout e Filtros
+│
+├── videos/             # Mídia em movimento para a Home
+│
+├── cadastro.html       # Página de Newsletter
+├── contato.html        # SAC e Localização
+├── feedback.html       # Pesquisa de Satisfação
+├── index.html          # Página Principal
+├── pedidos.html        # Encomendas Personalizadas
+└── README.txt          # Documentação Técnica (Esta versão)
 
-4. 🏗️ REFINAMENTOS DE QA & UX (LOGIC & LAYOUT)
+4. 🏗️ REFINAMENTOS DE QA & UX
 ------------------------------------------------------------------------
-Refinamentos críticos implementados nesta versão para garantir a melhor 
-experiência ao usuário:
+- EFEITO OVERLAY: Fundo dinâmico para foco total no carrinho e menus.
+- BUSCA EM TEMPO REAL: Filtro instantâneo de produtos no catálogo.
+- CHECKOUT INTELIGENTE: Exibição condicional de campos (Entrega vs Retirada).
+- SEGURANÇA NO PEDIDO: Validações para evitar envios vazios ou erros de troco.
 
-- POSICIONAMENTO: Botão WhatsApp elevado no Mobile (bottom: 100px) para
-  evitar conflitos com botões de ação e facilitar a rolagem.
-- GAVETA LATERAL: Carrinho configurado com 90% da largura no mobile,
-  expondo o contexto do site ao fundo e melhorando a percepção de profundidade.
-- PIXEL PERFECT: Eliminação de "gaps" visuais nos controles de quantidade
-  através de propriedades flex e overflow.
-- HIERARQUIA: Reposicionamento da tag "Mais Vendido" e centralização do 
-  título de Promoções para evitar poluição visual.
-
-5. 🔮 PRÓXIMOS PASSOS (ROADMAP v7.0)
+5. 🔮 PRÓXIMOS PASSOS (ROADMAP v8.0)
 ------------------------------------------------------------------------
-1. Conclusão da lógica de remoção de itens individuais do carrinho.
-2. Implementação de validação: impedir envio de pedidos com carrinho vazio.
-3. Persistência de dados via LocalStorage (Mantendo itens após o F5).
-4. Máscaras de input dinâmicas para Telefone e CPF no cadastro.
+1. Máscaras de input dinâmicas (Telefone e CEP) em JS.
+2. Notificações visuais (Toast) para feedback de ações.
+3. Estudo para migração de dados estáticos para uma API.
 
 6. 🚀 COMO EXECUTAR O PROJETO
 ------------------------------------------------------------------------
 1. Navegue até a pasta do projeto.
-2. Abra o arquivo 'index.html' no seu navegador preferido.
-3. Utilize o Console do Desenvolvedor (F12) para monitorar a execução 
-   das funções JavaScript e logs de sistema.
+2. Abra o arquivo 'index.html' no seu navegador.
+3. Utilize o Console (F12) para validar o armazenamento no LocalStorage.
 
 ========================================================================
 👤 AUTOR: Bruno Artacho
-📅 DATA: 19/02/2026
 ========================================================================

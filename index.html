@@ -43,36 +43,46 @@
     <!-- Cabeçalho do site -->
     <header class="cabecalho">
 
-        <!-- Logo padaria -->
         <a href="./index.html" class="logo-link">
             <img src="./images/logo/padaria_do_bairro_logo_optimized.webp" alt="logo_padaria_">
         </a>
 
-        <!-- menu de navegação entre itens da página principal-->
-        <nav class="menu-interno">
-            <ul>
-                <li><a href="#sobre-historia">Sobre</a></li>
-                <li><a href="#tabela-cardapio">Cardápio</a></li>
-                <li><a href="#promocoes-cardapio">Promoções</a></li>
-                <li><a href="#tabela-horario">Horários</a></li>
-                <!-- <li><a href="https://youtu.be/gt7zOP_wPfM" target="_blank">YouTube</a></li> -->
-                <!-- Coloquei essa informação no footer para não poluir o menu interno da Home -->
+        <div class="menus-navegacao">
+            <nav class="menu-interno">
+                <ul>
+                    <li><a href="index.html#sobre-historia">Sobre</a></li>
+                    <li><a href="index.html#tabela-cardapio">Cardápio</a></li>
+                    <li><a href="index.html#promocoes-cardapio">Promoções</a></li>
+                    <li><a href="index.html#tabela-horario">Horários</a></li>
+                </ul>
+            </nav>
 
+            <nav class="menu-principal">
+                <ul>
+                    <li><a href="./index.html" class="botao-menu-principal ativo">Home</a></li>
+                    <li><a href="./contato.html" class="botao-menu-principal">Contato</a></li>
+                    <li><a href="./pedidos.html" class="botao-menu-principal">Pedidos</a></li>
+                    <li><a href="./feedback.html" class="botao-menu-principal">Feedback</a></li>
+                    <li><a href="./cadastro.html" class="botao-menu-principal">Cadastro</a></li>
+                </ul>
+            </nav>
+        </div>
 
-                <!-- a é tag de link -->
-                <!-- href é o atributo que recebe o link -->
-            </ul>
-        </nav>
+        <div class="botoes-direita-header">
+            <button class="btn-icone-carrinho" onclick="abrirCarrinho()" aria-label="Abrir Carrinho">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span id="carrinho-badge" class="badge">0</span>
+            </button>
 
-        <nav class="menu-principal">
-            <ul>
-                <li><a href="./index.html" class="botao-menu-principal ativo">Home</a></li>
-                <li><a href="./contato.html" class="botao-menu-principal">Contato</a></li>
-                <li><a href="./pedidos.html" class="botao-menu-principal">Pedidos</a></li>
-                <li><a href="./feedback.html" class="botao-menu-principal">Feedback</a></li>
-                <li><a href="./cadastro.html" class="botao-menu-principal">Cadastro</a></li>
-            </ul>
-        </nav>
+            <button class="btn-mobile" onclick="toggleMenu()" aria-label="Abrir Menu">
+                ☰
+            </button>
+        </div>
 
     </header>
 
@@ -252,6 +262,15 @@
         <br>
         <section id="galeria-produtos">
             <h2>Nossos Produtos Fresquinhos:</h2>
+
+            <section class="pesquisa cartao">
+                <input type="text" id="campo-filtro" placeholder="Escolha sua gostosura:">
+                <ul id="resultado">
+
+                </ul>
+
+            </section>
+
             <!-- div: Tag para Divisão -->
             <div class="galeria-grid">
                 <img src="./images/produtos/Croissant.webp" alt="Croissant" height="200">
@@ -451,8 +470,8 @@
 
                     <div class="card-depoimento">
                         <div class="card-header">
-                            <img src="./images/depoimentos/seu_barriga.webp"
-                                alt="Foto do Senhor Barriga" class="avatar">
+                            <img src="./images/depoimentos/seu_barriga.webp" alt="Foto do Senhor Barriga"
+                                class="avatar">
                             <div class="info-autor">
                                 <h3>Sr. Barriga</h3>
                                 <span class="tag-fidelidade">Cliente VIP</span>
@@ -581,8 +600,8 @@
 
                     <div class="card-depoimento">
                         <div class="card-header">
-                            <img src="https://static.wikia.nocookie.net/dublagem/images/e/ef/Seu_barriga.jpg/revision/latest?cb=20250929063234&path-prefix=pt-br"
-                                alt="Foto do Senhor Barriga" class="avatar">
+                            <img src="./images/depoimentos/seu_barriga.webp" alt="Foto do Senhor Barriga"
+                                class="avatar">
                             <div class="info-autor">
                                 <h3>Sr. Barriga</h3>
                                 <span class="tag-fidelidade">Cliente VIP</span>
@@ -776,268 +795,9 @@
         </div>
     </section>
 
+    <div id="overlay-fundo" onclick="fecharTudo()"></div>
+
     <script src="./js/script.js"></script>
-
-    <script>
-        let carrinho = [];
-
-        function adicionarAoCarrinho(nomeProduto, precoProduto, idInputQtd) {
-            const inputQtd = document.getElementById(idInputQtd);
-            const quantidade = parseInt(inputQtd.value);
-            const limiteMaximo = parseInt(inputQtd.max) || 20;
-
-            if (isNaN(quantidade) || quantidade <= 0) {
-                alert("Por favor, insira uma quantidade válida.");
-                return;
-            }
-
-            const itemExistente = carrinho.find(item => item.nome === nomeProduto);
-            let quantidadeFutura = quantidade;
-
-            if (itemExistente) {
-                quantidadeFutura += itemExistente.quantidade;
-            }
-
-            if (quantidadeFutura > limiteMaximo) {
-                alert(`Atenção: O limite máximo por encomenda é de ${limiteMaximo} unidades de ${nomeProduto}.`);
-                inputQtd.value = 1;
-                return;
-            }
-
-            if (itemExistente) {
-                itemExistente.quantidade += quantidade;
-            } else {
-                carrinho.push({ nome: nomeProduto, preco: precoProduto, quantidade: quantidade });
-            }
-
-            inputQtd.value = 1;
-            renderizarCarrinho();
-            abrirCarrinho();
-        }
-
-        function renderizarCarrinho() {
-            const containerItens = document.getElementById('itens-carrinho');
-            const displayTotal = document.getElementById('valor-total');
-            let total = 0;
-
-            containerItens.innerHTML = '';
-
-            if (carrinho.length === 0) {
-                containerItens.innerHTML = '<p class="carrinho-vazio">Seu carrinho está vazio.</p>';
-                displayTotal.innerText = 'R$ 0,00';
-                return;
-            }
-
-            carrinho.forEach((item, index) => {
-                const subtotal = item.preco * item.quantidade;
-                total += subtotal;
-
-                containerItens.innerHTML += `
-                    <div class="item-carrinho">
-                        <div><strong>${item.quantidade}x</strong> ${item.nome}</div>
-                        <div>
-                            <span>R$ ${subtotal.toFixed(2).replace('.', ',')}</span>
-                            <button onclick="removerItem(${index})" class="btn-remover">🗑️</button>
-                        </div>
-                    </div>
-                `;
-            });
-
-            displayTotal.innerText = `R$ ${total.toFixed(2).replace('.', ',')}`;
-        }
-
-        function removerItem(index) {
-            carrinho.splice(index, 1);
-            renderizarCarrinho();
-        }
-
-        function abrirCarrinho() {
-            document.getElementById('carrinho-lateral').classList.remove('carrinho-oculto');
-        }
-
-        function fecharCarrinho() {
-            document.getElementById('carrinho-lateral').classList.add('carrinho-oculto');
-        }
-
-        // --- FUNÇÕES NOVAS DO CHECKOUT INTELIGENTE ---
-        function verificarTroco() {
-            const selectPagamento = document.getElementById('pagamento-cliente');
-            const inputTroco = document.getElementById('troco-cliente');
-
-            if (selectPagamento && inputTroco) {
-                if (selectPagamento.value === "Dinheiro") {
-                    inputTroco.classList.remove('oculto');
-                } else {
-                    inputTroco.classList.add('oculto');
-                    inputTroco.value = "";
-                }
-            }
-        }
-
-        function alternarModoEntrega() {
-            const radioSelecionado = document.querySelector('input[name="modo-entrega"]:checked');
-            const divDelivery = document.getElementById('dados-delivery');
-
-            if (radioSelecionado && divDelivery) {
-                if (radioSelecionado.value === "Retirada") {
-                    divDelivery.classList.add('oculto');
-                } else {
-                    divDelivery.classList.remove('oculto');
-                }
-            }
-        }
-
-        function finalizarPedidoWhatsApp() {
-            if (carrinho.length === 0) {
-                alert("Adicione itens ao carrinho antes de finalizar!");
-                return;
-            }
-
-            // 1. Capturar os dados básicos e travar se o HTML estiver incorreto
-            const nomeInput = document.getElementById('nome-cliente');
-            if (!nomeInput) {
-                alert("Erro Interno: O campo 'Nome' não foi encontrado no HTML.");
-                return;
-            }
-            const nome = nomeInput.value.trim();
-
-            const radioEntrega = document.querySelector('input[name="modo-entrega"]:checked');
-            if (!radioEntrega) {
-                alert("Erro Interno: As opções de Entrega/Retirada sumiram do HTML.");
-                return;
-            }
-            const modoEntrega = radioEntrega.value;
-
-            if (!nome) {
-                alert("Por favor, preencha o seu nome.");
-                nomeInput.focus();
-                return;
-            }
-
-            let endereco = "";
-            let complemento = "";
-            let pagamento = "";
-            let troco = "";
-
-            // Calcula o total
-            let totalCobranca = 0;
-            carrinho.forEach(item => {
-                totalCobranca += (item.preco * item.quantidade);
-            });
-
-            // 2. Validações SE FOR DELIVERY
-            if (modoEntrega === "Delivery") {
-                endereco = document.getElementById('endereco-cliente').value.trim();
-                complemento = document.getElementById('complemento-cliente').value.trim();
-                pagamento = document.getElementById('pagamento-cliente').value;
-                troco = document.getElementById('troco-cliente').value;
-
-                // Validação 1: Checa se está vazio
-                if (!endereco) {
-                    alert("Por favor, preencha o endereço de entrega.");
-                    document.getElementById('endereco-cliente').focus();
-                    return;
-                }
-
-                // Validação 2 (A Blindagem do QA): Checa se tem número ou S/N
-                // A Regex \d procura qualquer número. O s\/?n procura por sn ou s/n (ignorando maiúsculas/minúsculas pelo 'i')
-                const temNumeroOuSN = /\d|s\/?n/i.test(endereco);
-
-                if (!temNumeroOuSN) {
-                    alert("Atenção: Parece que você esqueceu o número do endereço!\nSe o local não tiver número, acrescente 'S/N'.");
-                    document.getElementById('endereco-cliente').focus();
-                    return;
-                }
-
-                if (!pagamento) {
-                    alert("Por favor, selecione uma forma de pagamento.");
-                    document.getElementById('pagamento-cliente').focus();
-                    return;
-                }
-
-                if (pagamento === "Dinheiro" && troco) {
-                    if (parseFloat(troco) < totalCobranca) {
-                        alert(`O valor para troco não pode ser menor que o total do pedido (R$ ${totalCobranca.toFixed(2).replace('.', ',')}).`);
-                        document.getElementById('troco-cliente').focus();
-                        return;
-                    }
-                }
-            }
-
-            // 3. Montar a mensagem do WhatsApp (Com Unicode Universal)
-            let textoPedido = `\uD83C\uDF5E *NOVO PEDIDO - Padaria do Bairro* \uD83C\uDF5E\n\n`;
-
-            // Capturar a Data e Hora exatas ---
-            const momentoAtual = new Date();
-            const dataPedido = momentoAtual.toLocaleDateString('pt-BR'); // Ex: 19/02/2026
-            const horaPedido = momentoAtual.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }); // Ex: 18:30
-            
-            // \u23F0 é o emoji de relógio (⏰)
-            textoPedido += `\u23F0 *Horário:* ${dataPedido} às ${horaPedido}\n`;
-
-            textoPedido += `\uD83D\uDC64 *Cliente:* ${nome}\n`;
-            textoPedido += `\uD83D\uDCE6 *Tipo:* ${modoEntrega}\n`;
-
-            if (modoEntrega === "Delivery") {
-                textoPedido += `\uD83D\uDCCD *Endereço:* ${endereco}\n`;
-                if (complemento) {
-                    textoPedido += `\uD83C\uDFE0 *Complemento:* ${complemento}\n`;
-                }
-                textoPedido += `\uD83D\uDCB3 *Pagamento:* ${pagamento}\n`;
-
-                if (pagamento === "Dinheiro") {
-                    if (troco) {
-                        const valorTrocoCalculado = parseFloat(troco) - totalCobranca;
-                        textoPedido += `\uD83D\uDCB5 *Troco para:* R$ ${parseFloat(troco).toFixed(2).replace('.', ',')} (Levar R$ ${valorTrocoCalculado.toFixed(2).replace('.', ',')})\n`;
-                    } else {
-                        textoPedido += `\uD83D\uDCB5 *Troco:* Não precisa (Valor Exato)\n`;
-                    }
-                }
-            } else {
-                textoPedido += `\uD83D\uDCB3 *Pagamento:* Será feito no balcão\n`;
-            }
-
-            textoPedido += `\n*--- RESUMO DO PEDIDO ---*\n\n`;
-
-            carrinho.forEach(item => {
-                const subtotal = item.preco * item.quantidade;
-                textoPedido += `\u25AA\uFE0F ${item.quantidade}x ${item.nome} - R$ ${subtotal.toFixed(2).replace('.', ',')}\n`;
-            });
-
-            textoPedido += `\n\uD83D\uDCB0 *TOTAL A PAGAR: R$ ${totalCobranca.toFixed(2).replace('.', ',')}*\n\n`;
-
-            const numeroWhatsApp = "5544984366533";
-            const urlFormatada = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(textoPedido)}`;
-
-            window.open(urlFormatada, '_blank');
-
-            // 4. Limpar formulário (Reset Inteligente)
-            carrinho = [];
-            document.getElementById('nome-cliente').value = "";
-
-            const elEndereco = document.getElementById('endereco-cliente');
-            if (elEndereco) elEndereco.value = "";
-
-            const elComplemento = document.getElementById('complemento-cliente');
-            if (elComplemento) elComplemento.value = "";
-
-            const elPagamento = document.getElementById('pagamento-cliente');
-            if (elPagamento) elPagamento.value = "";
-
-            const elTroco = document.getElementById('troco-cliente');
-            if (elTroco) {
-                elTroco.value = "";
-                elTroco.classList.add('oculto');
-            }
-
-            const radioDelivery = document.querySelector('input[name="modo-entrega"][value="Delivery"]');
-            if (radioDelivery) radioDelivery.checked = true;
-            alternarModoEntrega();
-
-            renderizarCarrinho();
-            fecharCarrinho();
-        }
-    </script>
 
 </body>
 
